@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:infra_converters="clr-namespace:Ark.WPF.Infra.Converters;assembly=Ark.WPF.Infra"
+                    xmlns:modern_converters="clr-namespace:Ark.WPF.Modern.Converters">
+
+    <infra_converters:BoolToHiddenConverter x:Key="BoolToHiddenConverter" />
+    <infra_converters:BoolToCollapsedConverter x:Key="BoolToCollapsedConverter" />
+    <infra_converters:InverseBoolConverter x:Key="InverseBoolConverter" />
+    <infra_converters:InverseBoolToHiddenConverter x:Key="InverseBoolToHiddenConverter" />
+    <infra_converters:InverseBoolToCollapsedConverter x:Key="InverseBoolToCollapsedConverter" />
+    <infra_converters:BitmapConverter x:Key="BitmapConverter" />
+
+    <modern_converters:CodeToColorConverter x:Key="CodeToColorConverter" />
+    <modern_converters:CodeToColorBrushConverter x:Key="CodeToColorBrushConverter" />
+    <modern_converters:ColorBrushToCodeConverter x:Key="ColorBrushToCodeConverter" />
+    <modern_converters:MessageIconConverter x:Key="MessageIconConverter" />
+    <modern_converters:MessageVisibilityConverter x:Key="MessageVisibilityConverter" />
+</ResourceDictionary>

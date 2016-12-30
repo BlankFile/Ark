@@ -1,0 +1,184 @@
+﻿<UserControl x:Class="Sample.Views.ThemeSettingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:actions="clr-namespace:Ark.WPF.Infra.Interactivity.Actions;assembly=Ark.WPF.Infra"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:modern_controls="clr-namespace:Ark.WPF.Modern.Controls;assembly=Ark.WPF.Modern"
+             Background="Transparent">
+
+    <UserControl.Style>
+        <Style TargetType="UserControl">
+            <Setter Property="modern_controls:ColorOption.ThemeColor" Value="{Binding ThemeColor}" />
+            <Setter Property="modern_controls:ColorOption.MainColor" Value="{Binding MainColor}" />
+            <Setter Property="modern_controls:ColorOption.InverseThemeColor" Value="{Binding InverseThemeColor, Mode=OneWayToSource}" />
+            <Setter Property="modern_controls:ColorOption.Duration" Value="0:0:0.3" />
+        </Style>
+    </UserControl.Style>
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <actions:CommandTriggerAction Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid Margin="4">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.Resources>
+            <Style BasedOn="{StaticResource {x:Type Label}}" TargetType="{x:Type Label}">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="HorizontalAlignment" Value="Left" />
+            </Style>
+        </Grid.Resources>
+
+        <Label Grid.ColumnSpan="4" Content="テーマ" />
+
+        <WrapPanel Grid.Row="1"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="3"
+                   MaxWidth="520"
+                   HorizontalAlignment="Left">
+            <WrapPanel.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Width" Value="50" />
+                    <Setter Property="Height" Value="50" />
+                    <Setter Property="Padding" Value="4" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.8" />
+                        </Trigger>
+                        <DataTrigger Value="True">
+                            <DataTrigger.Binding>
+                                <MultiBinding Converter="{StaticResource CheckTwoColorsConverter}">
+                                    <Binding Path="Child.Background" RelativeSource="{RelativeSource Mode=Self}" />
+                                    <Binding Converter="{StaticResource CodeToColorBrushConverter}" Path="MainTheme" />
+                                </MultiBinding>
+                            </DataTrigger.Binding>
+                            <Setter Property="Opacity" Value="0.7" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Template" Value="{DynamicResource ThemeButton}" />
+                </Style>
+                <ControlTemplate x:Key="ThemeButton" TargetType="{x:Type Button}">
+                    <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{StaticResource ColorGray}"
+                            BorderThickness="2"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                        <ContentPresenter x:Name="contentPresenter"
+                                          Margin="{TemplateBinding Padding}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                <actions:CommandTriggerAction Command="{Binding ChangeThemeCommand}" Parameter="{Binding Background, RelativeSource={RelativeSource AncestorType={x:Type Border}}, Converter={StaticResource ColorBrushToCodeConverter}}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Border>
+                </ControlTemplate>
+            </WrapPanel.Resources>
+            <Border>
+                <Button Background="{StaticResource ColorWhite}"
+                        Cursor="Hand"
+                        Foreground="{DynamicResource ColorBlack}" />
+            </Border>
+            <Border>
+                <Button Background="{StaticResource ColorBlack}"
+                        Cursor="Hand"
+                        Foreground="{DynamicResource ColorWhite}" />
+            </Border>
+        </WrapPanel>
+
+        <Label Grid.Row="5"
+               Grid.ColumnSpan="4"
+               Margin="0,20,0,0"
+               Content="カラー" />
+
+        <ItemsControl Grid.Row="6"
+                      Grid.Column="1"
+                      Grid.ColumnSpan="3"
+                      ItemsSource="{Binding ColorList}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel MaxWidth="620" HorizontalAlignment="Left">
+                        <i:Interaction.Behaviors>
+                            <ei:FluidMoveBehavior AppliesTo="Children" Duration="0:0:0.3" />
+                        </i:Interaction.Behaviors>
+                    </WrapPanel>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <DataTemplate.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="Width" Value="50" />
+                            <Setter Property="Height" Value="50" />
+                            <Setter Property="Padding" Value="4" />
+                            <Setter Property="BorderThickness" Value="0" />
+                            <Setter Property="Cursor" Value="Hand" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource ColorGray}" />
+                                </Trigger>
+                                <DataTrigger Value="True">
+                                    <DataTrigger.Binding>
+                                        <MultiBinding Converter="{StaticResource CheckTwoColorsConverter}">
+                                            <Binding Path="Child.Background" RelativeSource="{RelativeSource Mode=Self}" />
+                                            <Binding Converter="{StaticResource CodeToColorBrushConverter}"
+                                                     Path="DataContext.MainColor"
+                                                     RelativeSource="{RelativeSource AncestorType=ItemsControl}" />
+                                        </MultiBinding>
+                                    </DataTrigger.Binding>
+                                    <Setter Property="Padding" Value="0" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                        <Style TargetType="Button">
+                            <Style.Setters>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border x:Name="border"
+                                                    Background="{TemplateBinding Background}"
+                                                    BorderThickness="0"
+                                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                                                <ContentPresenter x:Name="contentPresenter"
+                                                                  Margin="{TemplateBinding Padding}"
+                                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                                <i:Interaction.Triggers>
+                                                    <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                        <actions:CommandTriggerAction Command="{Binding DataContext.ChangeColorCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" Parameter="{Binding Background, RelativeSource={RelativeSource AncestorType={x:Type Border}}, Converter={StaticResource ColorBrushToCodeConverter}}" />
+                                                    </i:EventTrigger>
+                                                </i:Interaction.Triggers>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style.Setters>
+                        </Style>
+                    </DataTemplate.Resources>
+                    <Border>
+                        <Button Background="{Binding Converter={StaticResource CodeToColorBrushConverter}}" />
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</UserControl>

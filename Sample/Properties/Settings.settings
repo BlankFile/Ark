@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Sample.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="WindowPositionTop" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="WindowPositionLeft" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="WindowSizeWidth" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">640</Value>
+    </Setting>
+    <Setting Name="WindowSizeHeight" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">420</Value>
+    </Setting>
+    <Setting Name="MainColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FF00198D</Value>
+    </Setting>
+    <Setting Name="ThemeColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FFFFFFFF</Value>
+    </Setting>
+    <Setting Name="InverseThemeColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FF151515</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

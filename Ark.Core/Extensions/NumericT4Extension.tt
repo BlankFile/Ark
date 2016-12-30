@@ -1,0 +1,82 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Globalization" #>
+<#@ output extension=".cs" #>
+<# 
+
+var types = new List<Tuple<string, string, string>>()
+{
+    Tuple.Create("sbyte","SByte","SByte"),
+    Tuple.Create("byte","Byte","Byte"),
+    Tuple.Create("short","Int16","Short"),
+    Tuple.Create("ushort","UInt16","UShort"),
+    Tuple.Create("int","Int32","Int"),
+    Tuple.Create("uint","UInt32","UInt"),
+    Tuple.Create("long","Int64","Long"),
+    Tuple.Create("ulong","UInt64","ULong"),
+    Tuple.Create("float","Single","Float"),
+    Tuple.Create("double","Double","Double"),
+    Tuple.Create("decimal","Decimal","Decimal")
+};
+
+
+#>
+
+namespace System
+{
+	/// <summary>
+	/// 数値の拡張メソッドを定義します。
+	/// </summary>
+    public static partial class NumericT4Extension
+    {
+<# foreach(var type in types){ #>
+		#region <#= type.Item3 #>
+
+		/// <summary>
+        /// 0かどうか判断します。
+        /// </summary>
+        /// <param name="value">値</param>
+        /// <returns>True：0　False：0でない</returns>
+		public static bool IsZero(this <#= type.Item1 #> value)
+        {
+            return value == 0;
+        }
+
+        /// <summary>
+        /// 正かどうか判断します。
+        /// </summary>
+        /// <param name="value">値</param>
+        /// <returns>True：正　False：0または負</returns>
+        public static bool IsPlus(this <#= type.Item1 #> value)
+        {
+            return value > 0;
+        }
+
+        /// <summary>
+        /// 負かどうか判断します。
+        /// </summary>
+        /// <param name="value">値</param>
+        /// <returns>True：負　False：0または正</returns>
+        public static bool IsMinus(this <#= type.Item1 #> value)
+        {
+            return value < 0;
+        }
+
+        /// <summary>
+        /// 1/2 の値を返します。
+        /// </summary>
+        /// <param name="value">値</param>
+        /// <returns>1/2 の値</returns>
+		public static <#= type.Item1 #> Half(this <#= type.Item1 #> value)
+        {
+		    return Convert.To<#= type.Item2 #>(value / 2);
+        }
+
+		#endregion
+
+<# } #>
+    }
+}

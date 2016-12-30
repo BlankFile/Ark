@@ -1,0 +1,49 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Ark.WPF.Modern.Controls"
+                    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ark.WPF.Modern;component/Resources/ColorResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="controls:SlideTransitionCore">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:SlideTransitionCore">
+                    <Grid ClipToBounds="True">
+                        <Grid Name="container" Width="{Binding ContainerWidth, RelativeSource={RelativeSource AncestorType=controls:SlideTransitionCore}, Mode=OneWayToSource}">
+                            <Grid.RenderTransform>
+                                <TranslateTransform X="{Binding TranslateX, RelativeSource={RelativeSource AncestorType=controls:SlideTransitionCore}}" />
+                            </Grid.RenderTransform>
+
+                            <ContentControl Content="{Binding Display1, RelativeSource={RelativeSource AncestorType=controls:SlideTransitionCore}}">
+                                <ContentControl.RenderTransform>
+                                    <TranslateTransform X="{Binding Display1TranslateX, RelativeSource={RelativeSource AncestorType=controls:SlideTransitionCore}}" />
+                                </ContentControl.RenderTransform>
+                            </ContentControl>
+                            <ContentControl Content="{Binding Display2, RelativeSource={RelativeSource AncestorType=controls:SlideTransitionCore}}">
+                                <ContentControl.RenderTransform>
+                                    <TranslateTransform X="{Binding Display2TranslateX, RelativeSource={RelativeSource AncestorType=controls:SlideTransitionCore}}" />
+                                </ContentControl.RenderTransform>
+                            </ContentControl>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="controls:SlideTransition">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:SlideTransition">
+                    <Grid ClipToBounds="True">
+                        <controls:SlideTransitionCore x:Name="core" Items="{Binding Items, RelativeSource={RelativeSource AncestorType=controls:SlideTransition}}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

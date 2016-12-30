@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity">
+
+    <SolidColorBrush x:Key="ColorTheme" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="ColorInverseTheme" Color="#FF151515" />
+    <SolidColorBrush x:Key="ColorMain" Color="#FFFFFF" />
+
+    <SolidColorBrush x:Key="ColorDark" Color="#FF404040" />
+    <SolidColorBrush x:Key="ColorHeavyGray" Color="#FF7A7A7A" />
+    <SolidColorBrush x:Key="ColorGray" Color="#FFB9B9B9" />
+    <SolidColorBrush x:Key="ColorLightGray" Color="Gainsboro" />
+    <SolidColorBrush x:Key="ColorLight" Color="#FFFAFAFA" />
+
+    <SolidColorBrush x:Key="ColorWhite" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="ColorBlack" Color="#FF151515" />
+
+    <SolidColorBrush x:Key="ColorNavy" Color="#FF00198D" />
+    <SolidColorBrush x:Key="ColorBlue" Color="#FF002FCF" />
+    <SolidColorBrush x:Key="ColorLightBlue" Color="#FF0074FF" />
+    <SolidColorBrush x:Key="ColorAqua" Color="#FF0DA9B8" />
+    <SolidColorBrush x:Key="ColorSeaGreen" Color="#FF10B689" />
+    <SolidColorBrush x:Key="ColorGreen" Color="#FF008313" />
+    <SolidColorBrush x:Key="ColorLime" Color="#FF57B01A" />
+    <SolidColorBrush x:Key="ColorOlive" Color="#FF587430" />
+    <SolidColorBrush x:Key="ColorKhaki" Color="#FF3E472B" />
+    <SolidColorBrush x:Key="ColorBeige" Color="#FFC5C984" />
+    <SolidColorBrush x:Key="ColorYellow" Color="#FFF7F700" />
+    <SolidColorBrush x:Key="ColorDeepYellow" Color="#FFF1D100" />
+    <SolidColorBrush x:Key="ColorOrange" Color="#FFFFB109" />
+    <SolidColorBrush x:Key="ColorDeepOrange" Color="#FFFF8B00" />
+    <SolidColorBrush x:Key="ColorLightBrown" Color="#FFB84B00" />
+    <SolidColorBrush x:Key="ColorBrown" Color="#FF7A390C" />
+    <SolidColorBrush x:Key="ColorMaroon" Color="#FFBB0000" />
+    <SolidColorBrush x:Key="ColorRed" Color="#FFE80000" />
+    <SolidColorBrush x:Key="ColorCrimson" Color="#FFFF0046" />
+    <SolidColorBrush x:Key="ColorPink" Color="#FFFF00A2" />
+    <SolidColorBrush x:Key="ColorPeach" Color="#FFDC35B6" />
+    <SolidColorBrush x:Key="ColorLavender" Color="#FF8C63D4" />
+    <SolidColorBrush x:Key="ColorPurple" Color="#FFAF00E2" />
+    <SolidColorBrush x:Key="ColorViolet" Color="#FF6719A8" />
+
+</ResourceDictionary>

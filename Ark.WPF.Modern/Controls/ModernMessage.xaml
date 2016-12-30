@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="Ark.WPF.Modern.Controls.ModernMessage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:actions="clr-namespace:Ark.WPF.Modern.Interactivity.Actions"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:local="clr-namespace:Ark.WPF.Modern.Controls"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d">
+    <Grid Background="{DynamicResource ColorTheme}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Image Width="32"
+               Height="32"
+               Margin="15"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Source="{Binding Path=DialogImage, RelativeSource={RelativeSource AncestorType=local:ModernMessage}, Converter={StaticResource MessageIconConverter}}"
+               Stretch="Fill" />
+
+        <TextBlock Grid.Column="1"
+                   MaxWidth="240"
+                   Margin="0,15,15,15"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Foreground="{DynamicResource ColorInverseTheme}"
+                   Text="{Binding Path=Message, RelativeSource={RelativeSource AncestorType=local:ModernMessage}}"
+                   TextWrapping="Wrap" />
+
+        <StackPanel Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    HorizontalAlignment="Right"
+                    Orientation="Horizontal">
+            <StackPanel.Resources>
+                <Style TargetType="StackPanel">
+                    <Setter Property="Margin" Value="60,0,0,0" />
+                    <Setter Property="HorizontalAlignment" Value="Right" />
+                    <Setter Property="Orientation" Value="Horizontal" />
+                </Style>
+                <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+                    <Setter Property="Margin" Value="0,10,10,10" />
+                    <Setter Property="Width" Value="80" />
+                    <Setter Property="HorizontalAlignment" Value="Left" />
+                    <Setter Property="Padding" Value="0,1,0,0" />
+                    <Setter Property="Visibility" Value="0,1,0,0" />
+                </Style>
+            </StackPanel.Resources>
+
+            <Button Command="{Binding OkCommand}"
+                    Content="OK"
+                    IsDefault="True"
+                    Visibility="{Binding ButtonType, RelativeSource={RelativeSource AncestorType=local:ModernMessage}, ConverterParameter=Ok, Converter={StaticResource MessageVisibilityConverter}}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <ei:ChangePropertyAction PropertyName="Result"
+                                                 TargetObject="{Binding RelativeSource={RelativeSource AncestorType=local:ModernMessage}}"
+                                                 Value="True" />
+                        <actions:CloseModernDialogAction IsEnabled="True" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            <Button Command="{Binding YesCommand}"
+                    Content="はい"
+                    IsDefault="True"
+                    Visibility="{Binding ButtonType, RelativeSource={RelativeSource AncestorType=local:ModernMessage}, ConverterParameter=Yes, Converter={StaticResource MessageVisibilityConverter}}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <ei:ChangePropertyAction PropertyName="Result"
+                                                 TargetObject="{Binding RelativeSource={RelativeSource AncestorType=local:ModernMessage}}"
+                                                 Value="True" />
+                        <actions:CloseModernDialogAction IsEnabled="True" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            <Button Command="{Binding NoCommand}"
+                    Content="いいえ"
+                    IsCancel="True"
+                    Visibility="{Binding ButtonType, RelativeSource={RelativeSource AncestorType=local:ModernMessage}, ConverterParameter=No, Converter={StaticResource MessageVisibilityConverter}}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <ei:ChangePropertyAction PropertyName="Result"
+                                                 TargetObject="{Binding RelativeSource={RelativeSource AncestorType=local:ModernMessage}}"
+                                                 Value="False" />
+                        <actions:CloseModernDialogAction IsEnabled="True" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            <Button Command="{Binding CancelCommand}"
+                    Content="キャンセル"
+                    IsCancel="True"
+                    Visibility="{Binding ButtonType, RelativeSource={RelativeSource AncestorType=local:ModernMessage}, ConverterParameter=Cancel, Converter={StaticResource MessageVisibilityConverter}}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <ei:ChangePropertyAction PropertyName="Result"
+                                                 TargetObject="{Binding RelativeSource={RelativeSource AncestorType=local:ModernMessage}}"
+                                                 Value="False" />
+                        <actions:CloseModernDialogAction IsEnabled="True" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            <Button Command="{Binding CloseCommand}"
+                    Content="閉じる"
+                    Visibility="{Binding ButtonType, RelativeSource={RelativeSource AncestorType=local:ModernMessage}, ConverterParameter=Close, Converter={StaticResource MessageVisibilityConverter}}">
+
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <actions:CloseModernDialogAction IsEnabled="True" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

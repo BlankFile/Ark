@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="Sample.Views.InformationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:actions="clr-namespace:Ark.WPF.Infra.Interactivity.Actions;assembly=Ark.WPF.Infra"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:infra_interactivity="clr-namespace:Ark.WPF.Infra.Interactivity;assembly=Ark.WPF.Infra"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:modern_controls="clr-namespace:Ark.WPF.Modern.Controls;assembly=Ark.WPF.Modern"
+             xmlns:modern_messengers="clr-namespace:Ark.WPF.Modern.Interactivity.Messengers;assembly=Ark.WPF.Modern"
+             xmlns:view_models="clr-namespace:Sample.ViewModels"
+             x:Name="InformationControl">
+
+    <UserControl.Template>
+        <ControlTemplate TargetType="UserControl">
+            <StackPanel Orientation="Vertical">
+                <Grid Background="{DynamicResource ColorTheme}">
+                    <TextBlock Padding="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="16"
+                               Foreground="{DynamicResource ColorInverseTheme}">
+                        <LineBreak />
+                        <LineBreak />
+                        ＿＿____
+                        <LineBreak />
+                        |←樹海 |
+                        <LineBreak />
+                        ￣￣||￣　　　　　ｵﾜﾀ┗(^o^ )┓三
+                        <LineBreak />
+                        <Run Text="     " />
+                        ||　　　　　　　　　┏┗ 　三
+                        <LineBreak />
+                        ￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣
+                    </TextBlock>
+                </Grid>
+            </StackPanel>
+        </ControlTemplate>
+    </UserControl.Template>
+</UserControl>

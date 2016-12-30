@@ -1,0 +1,106 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:actions="clr-namespace:Ark.WPF.Infra.Interactivity.Actions;assembly=Ark.WPF.Infra"
+                    xmlns:controls="clr-namespace:Ark.WPF.Modern.Controls"
+                    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                    xmlns:triggers="clr-namespace:Ark.WPF.Infra.Interactivity.Triggers;assembly=Ark.WPF.Infra">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ark.WPF.Modern;component/Resources/ColorResource.xaml" />
+        <ResourceDictionary Source="/Ark.WPF.Modern;component/Resources/ConverterResource.xaml" />
+        <ResourceDictionary Source="/Ark.WPF.Modern;component/Resources/Styles/CaptionButtonStyle.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <ControlTemplate x:Key="ModernWindowTemplate" TargetType="Window">
+        <Border>
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=WindowState}" Value="Maximized">
+                            <Setter Property="BorderThickness" Value="6" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+
+            <AdornerDecorator>
+                <Grid Background="{DynamicResource ColorTheme}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="0"
+                               Margin="9,5,0,0"
+                               FontSize="14"
+                               Foreground="{DynamicResource ColorMain}"
+                               Opacity="0.74"
+                               Text="{Binding Title, RelativeSource={RelativeSource AncestorType=Window}}"
+                               Visibility="{Binding IsVisibleTitle, RelativeSource={RelativeSource AncestorType=controls:ModernWindow}, Converter={StaticResource BoolToCollapsedConverter}}" />
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="1"
+                                Margin="0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Top"
+                                IsEnabled="{Binding IsEnabledControlBox, RelativeSource={RelativeSource AncestorType=controls:ModernWindow}}"
+                                Orientation="Horizontal"
+                                Visibility="{Binding IsVisibleControlBox, RelativeSource={RelativeSource AncestorType=controls:ModernWindow}, Converter={StaticResource BoolToCollapsedConverter}}">
+                        <StackPanel.Resources>
+                            <Style BasedOn="{StaticResource CaptionButtonStyle}" TargetType="Button" />
+                        </StackPanel.Resources>
+                        <Button Content="0" ToolTip="最小化">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <actions:ChangeWindowStateAction State="Minimized" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Button>
+                        <Button Content="1" ToolTip="最大化">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <actions:ChangeWindowStateAction State="Maximized" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Button>
+                        <Button Content="2" ToolTip="元に戻す">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <actions:ChangeWindowStateAction State="Normal" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Button>
+                        <Button Content="r" ToolTip="閉じる">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <actions:CloseWindowAction />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Button>
+                    </StackPanel>
+                    <ContentPresenter Grid.Row="1" Grid.ColumnSpan="2" />
+                </Grid>
+            </AdornerDecorator>
+
+        </Border>
+    </ControlTemplate>
+
+    <Style x:Key="ModernWindowStyle" TargetType="controls:ModernWindow">
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome CaptionHeight="20"
+                              CornerRadius="10"
+                              GlassFrameThickness="1"
+                              ResizeBorderThickness="6"
+                              UseAeroCaptionButtons="False" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template" Value="{StaticResource ModernWindowTemplate}" />
+    </Style>
+
+</ResourceDictionary>

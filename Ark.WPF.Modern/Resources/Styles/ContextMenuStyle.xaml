@@ -1,0 +1,128 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ark.WPF.Modern;component/Resources/ColorResource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="ContextMenu">
+        <Setter Property="SnapsToDevicePixels"
+                Value="True" />
+        <Setter Property="OverridesDefaultStyle"
+                Value="True" />
+        <Setter Property="Grid.IsSharedSizeScope"
+                Value="true" />
+        <Setter Property="HasDropShadow"
+                Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContextMenu">
+                    <Border Background="Transparent"
+                            Padding="1,1,5,5">
+                        <Border BorderBrush="{DynamicResource ColorTheme}"
+                                BorderThickness="1">
+                            <Border Padding="3"
+                                    Background="{DynamicResource ColorTheme}"
+                                    BorderBrush="{DynamicResource ColorMain}"
+                                    BorderThickness="2">
+                                <StackPanel IsItemsHost="True"
+                                            KeyboardNavigation.DirectionalNavigation="Cycle">
+                                </StackPanel>
+                            </Border>
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="6"
+                                                  Direction="-45"
+                                                  ShadowDepth="4"
+                                                  Opacity="0.7"
+                                                  Color="#151515" />
+                            </Border.Effect>
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                             From="0"
+                                             To="1"
+                                             Duration="0:0:0.16" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <ControlTemplate x:Key="TopLevelItemTemplateKey"
+                     TargetType="MenuItem">
+        <Border Name="Border"
+                Padding="2">
+            <Grid>
+                <ContentPresenter Margin="6,0"
+                                  ContentSource="Header"
+                                  RecognizesAccessKey="True" />
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsHighlighted"
+                     Value="true">
+                <Setter TargetName="Border"
+                        Property="Background"
+                        Value="{DynamicResource ColorMain}" />
+                <Setter TargetName="Border"
+                        Property="BorderBrush"
+                        Value="Transparent" />
+                <Setter TargetName="Border"
+                        Property="Opacity"
+                        Value="{DynamicResource NormalOpacity}" />
+                <Setter Property="Foreground"
+                        Value="{StaticResource ColorWhite}" />
+            </Trigger>
+            <Trigger Property="IsEnabled"
+                     Value="False">
+                <Setter Property="Foreground"
+                        Value="{StaticResource ColorHeavyGray}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type MenuItem}">
+        <Setter Property="OverridesDefaultStyle"
+                Value="True" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource ColorInverseTheme}" />
+        <Setter Property="Template"
+                Value="{StaticResource TopLevelItemTemplateKey }" />
+    </Style>
+
+    <ContextMenu x:Key="ContextMenuForTextBox">
+        <MenuItem Command="ApplicationCommands.Cut" />
+        <MenuItem Command="ApplicationCommands.Copy" />
+        <MenuItem Command="ApplicationCommands.Paste" />
+        <Separator />
+        <MenuItem Command="ApplicationCommands.Undo" />
+    </ContextMenu>
+
+    <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}"
+           TargetType="Separator">
+        <Setter Property="OverridesDefaultStyle"
+                Value="true" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Separator}">
+                    <Border Background="{StaticResource ColorHeavyGray}"
+                            Width="{TemplateBinding Width}"
+                            Height="1"
+                            Margin="2" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

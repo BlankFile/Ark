@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="Sample.Views.SampleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:actions="clr-namespace:Ark.WPF.Infra.Interactivity.Actions;assembly=Ark.WPF.Infra"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:modern_controls="clr-namespace:Ark.WPF.Modern.Controls;assembly=Ark.WPF.Modern"
+             xmlns:modern_messengers="clr-namespace:Ark.WPF.Modern.Interactivity.Messengers;assembly=Ark.WPF.Modern"
+             xmlns:view_models="clr-namespace:Sample.ViewModels"
+             xmlns:views="clr-namespace:Sample.Views"
+             x:Name="SamplePage">
+
+    <UserControl.Resources>
+        <view_models:SampleViewModel x:Key="vm">
+            <view_models:SampleViewModel.DialogMessenger>
+                <modern_messengers:ShowModernDialogMessenger Effect="Zoom" Target="{x:Reference Name=SamplePage}" />
+            </view_models:SampleViewModel.DialogMessenger>
+            <view_models:SampleViewModel.MessageMessenger>
+                <modern_messengers:ShowModernMessageMessenger Target="{x:Reference Name=SamplePage}" />
+            </view_models:SampleViewModel.MessageMessenger>
+        </view_models:SampleViewModel>
+    </UserControl.Resources>
+
+    <UserControl.DataContext>
+        <Binding Source="{StaticResource vm}" />
+    </UserControl.DataContext>
+
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label FontSize="22" ToolTip="ちみもうりょう">
+                魑魅魍魎
+            </Label>
+            <TextBlock VerticalAlignment="Center"
+                       Foreground="{DynamicResource ColorInverseTheme}"
+                       Text=" (読みはツールチップで表示されます。)" />
+        </StackPanel>
+
+        <ComboBox Width="120"
+                  Margin="5,10"
+                  HorizontalAlignment="Left"
+                  SelectedIndex="0">
+            <ComboBoxItem>りんご</ComboBoxItem>
+            <ComboBoxItem>ぶどう</ComboBoxItem>
+            <ComboBoxItem>みかん</ComboBoxItem>
+            <ComboBoxItem>メロン</ComboBoxItem>
+        </ComboBox>
+
+        <StackPanel Width="40"
+                    Margin="5,10"
+                    HorizontalAlignment="Left">
+            <RadioButton GroupName="sample_radio">☀</RadioButton>
+            <RadioButton GroupName="sample_radio">☁</RadioButton>
+            <RadioButton GroupName="sample_radio">☂</RadioButton>
+        </StackPanel>
+
+        <StackPanel Margin="5,10" HorizontalAlignment="Left">
+            <CheckBox>＼(^o^)／</CheckBox>
+            <CheckBox>＼(^o^)／＼(^o^)／＼(^o^)／</CheckBox>
+            <CheckBox>＼(^o^)／＼(^o^)／＼(^o^)／＼(^o^)／＼(^o^)／＼(^o^)／</CheckBox>
+        </StackPanel>
+
+        <TextBlock Margin="5,10" Foreground="{DynamicResource ColorInverseTheme}">
+            コンテキストメニュー
+            <TextBlock.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="ピアノ" />
+                    <MenuItem Header="チェンバロ" />
+                    <MenuItem Header="フルート" />
+                </ContextMenu>
+            </TextBlock.ContextMenu>
+        </TextBlock>
+
+        <StackPanel Orientation="Horizontal">
+            <Button Width="80"
+                    Margin="5,10"
+                    HorizontalAlignment="Left"
+                    Command="{Binding DialogCommand}">
+                ダイアログ
+            </Button>
+
+            <Button Width="80"
+                    Margin="5,10"
+                    HorizontalAlignment="Left"
+                    Command="{Binding MessageCommand}">
+                メッセージ
+            </Button>
+        </StackPanel>
+
+    </StackPanel>
+
+</UserControl>

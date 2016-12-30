@@ -1,0 +1,176 @@
+﻿<modern_controls:ModernWindow x:Class="Sample.Views.MainWindowView"
+                              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                              xmlns:actions="clr-namespace:Ark.WPF.Infra.Interactivity.Actions;assembly=Ark.WPF.Infra"
+                              xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+                              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                              xmlns:modern_controls="clr-namespace:Ark.WPF.Modern.Controls;assembly=Ark.WPF.Modern"
+                              xmlns:modern_messengers="clr-namespace:Ark.WPF.Modern.Interactivity.Messengers;assembly=Ark.WPF.Modern"
+                              xmlns:view_models="clr-namespace:Sample.ViewModels"
+                              xmlns:views="clr-namespace:Sample.Views"
+                              x:Name="MainWindow"
+                              Title="Sample"
+                              MinWidth="400"
+                              MinHeight="300"
+                              IsVisibleTitle="True"
+                              WindowStartupLocation="CenterScreen">
+
+    <modern_controls:ModernWindow.Resources>
+        <!--#region VMインスタンス生成-->
+        <view_models:MainWindowViewModel x:Key="vm" />
+        <!--#endregion-->
+    </modern_controls:ModernWindow.Resources>
+
+    <modern_controls:ModernWindow.DataContext>
+        <Binding Source="{StaticResource vm}" />
+    </modern_controls:ModernWindow.DataContext>
+
+    <!--#region ウインドウのイベント-->
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <actions:CommandTriggerAction Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <!--#endregion-->
+
+    <modern_controls:ModernWindow.Style>
+        <Style BasedOn="{StaticResource ModernWindowStyle}" TargetType="modern_controls:ModernWindow">
+            <Setter Property="WindowState" Value="{Binding State}" />
+            <Setter Property="Top" Value="{Binding Top}" />
+            <Setter Property="Left" Value="{Binding Left}" />
+            <Setter Property="Width" Value="{Binding Width}" />
+            <Setter Property="Height" Value="{Binding Height}" />
+        </Style>
+    </modern_controls:ModernWindow.Style>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    Margin="10,10,10,0"
+                    Orientation="Horizontal">
+
+            <StackPanel.Resources>
+                <TextDecorationCollection x:Key="MenuUnderline">
+                    <TextDecoration Location="Underline" PenOffset="2">
+                        <TextDecoration.Pen>
+                            <Pen Brush="{DynamicResource ColorMain}"
+                                 EndLineCap="Square"
+                                 StartLineCap="Square"
+                                 Thickness="2" />
+                        </TextDecoration.Pen>
+                    </TextDecoration>
+                </TextDecorationCollection>
+                <TextDecorationCollection x:Key="DisableMenuUnderline">
+                    <TextDecoration Location="Underline" PenOffset="2">
+                        <TextDecoration.Pen>
+                            <Pen Brush="{StaticResource ColorHeavyGray}"
+                                 EndLineCap="Square"
+                                 StartLineCap="Square"
+                                 Thickness="2" />
+                        </TextDecoration.Pen>
+                    </TextDecoration>
+                </TextDecorationCollection>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="FontSize" Value="16" />
+                    <Setter Property="Opacity" Value="0.6" />
+                    <Setter Property="Margin" Value="5,0" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="1" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+                <Style TargetType="{x:Type Hyperlink}">
+                    <Setter Property="TextDecorations" Value="{x:Null}" />
+                    <Setter Property="Foreground" Value="{DynamicResource ColorMain}" />
+                    <Setter Property="Cursor" Value="Arrow" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}}" Value="False">
+                            <Setter Property="Foreground" Value="{StaticResource ColorHeavyGray}" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Resources>
+
+            <TextBlock>
+                <Hyperlink>
+                    <Run>サンプル</Run>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <actions:CommandTriggerAction Command="{Binding ChangePageCommand}" Parameter="Main" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Hyperlink>
+                <TextBlock.Style>
+                    <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CurrentMenu}" Value="Main">
+                                <Setter Property="Opacity" Value="1" />
+                                <Setter Property="TextDecorations" Value="{StaticResource MenuUnderline}" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <TextBlock>
+                <Hyperlink>
+                    <Run>設定</Run>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <actions:CommandTriggerAction Command="{Binding ChangePageCommand}" Parameter="Setting" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Hyperlink>
+                <TextBlock.Style>
+                    <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CurrentMenu}" Value="Setting">
+                                <Setter Property="Opacity" Value="1" />
+                                <Setter Property="TextDecorations" Value="{StaticResource MenuUnderline}" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <TextBlock>
+                <Hyperlink>
+                    <Run>情報</Run>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <actions:CommandTriggerAction Command="{Binding ChangePageCommand}" Parameter="Information" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Hyperlink>
+                <TextBlock.Style>
+                    <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CurrentMenu}" Value="Information">
+                                <Setter Property="Opacity" Value="1" />
+                                <Setter Property="TextDecorations" Value="{StaticResource MenuUnderline}" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+        </StackPanel>
+
+        <Border Grid.Row="1" Padding="15">
+
+            <modern_controls:SlideTransition Next="{Binding Next}"
+                                             Previous="{Binding Previous}"
+                                             Value="{Binding SlideValue}"
+                                             Duration="0:0:0.8">
+                <views:SampleView />
+                <views:SettingView />
+                <views:InformationView />
+            </modern_controls:SlideTransition>
+        </Border>
+    </Grid>
+
+</modern_controls:ModernWindow>
