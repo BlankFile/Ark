@@ -30,6 +30,5 @@ namespace Ark.WPF.Modern.Media.Imaging
         /// 「エラー」を意味するアイコン。
         /// </summary>
         public static BitmapImage Error { get; } = ImageManager.CreateBitmap(IconUrl.Put("Error"));
-
     }
 }

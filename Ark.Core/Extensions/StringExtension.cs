@@ -10,7 +10,6 @@ namespace System
     /// </summary>
     public static class StringExtension
     {
-
         #region 判断
 
         /// <summary>
@@ -39,7 +38,7 @@ namespace System
             return string.IsNullOrWhiteSpace(value);
         }
 
-        #endregion
+        #endregion 判断
 
         #region 置換
 
@@ -54,7 +53,7 @@ namespace System
             return string.Format(value, args);
         }
 
-        #endregion
+        #endregion 置換
 
         #region 整形
 
@@ -118,8 +117,6 @@ namespace System
             return string.Concat(chars);
         }
 
-        #endregion
-
-
+        #endregion 整形
     }
 }

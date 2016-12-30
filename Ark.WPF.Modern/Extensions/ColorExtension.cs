@@ -1,5 +1,4 @@
-﻿
-namespace System.Windows.Media
+﻿namespace System.Windows.Media
 {
     /// <summary>
     /// <see cref="Color"/> 構造体の拡張メソッドを定義します。

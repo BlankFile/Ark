@@ -1,5 +1,4 @@
 ﻿using System.Windows.Controls;
-using Ark.WPF.Modern.Controls;
 
 namespace Sample.Views
 {

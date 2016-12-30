@@ -1,12 +1,11 @@
-﻿
-namespace Ark.WPF.Modern.Media.Design
+﻿namespace Ark.WPF.Modern.Media.Design
 {
     /// <summary>
     /// 透過度リソースのキーを表します。
     /// </summary>
     public static class OpacityResourceKey
     {
-        /// <summary>  
+        /// <summary>
         /// 通常
         /// </summary>
         public const string Normal = "NormalOpacity";

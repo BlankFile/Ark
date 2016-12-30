@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Ark.WPF.Infra.Mvvm
@@ -314,5 +313,4 @@ namespace Ark.WPF.Infra.Mvvm
             return new { args1, args2 };
         }
     }
-
 }

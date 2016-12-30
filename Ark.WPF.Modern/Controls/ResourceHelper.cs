@@ -101,7 +101,7 @@ namespace Ark.WPF.Modern.Controls
             return foundChild;
         }
 
-        #endregion
+        #endregion [Method] 取得・設定
 
         #region [Method] バインド
 
@@ -140,6 +140,6 @@ namespace Ark.WPF.Modern.Controls
             Interaction.GetTriggers(element).Add(eventTrigger);
         }
 
-        #endregion
+        #endregion [Method] バインド
     }
 }

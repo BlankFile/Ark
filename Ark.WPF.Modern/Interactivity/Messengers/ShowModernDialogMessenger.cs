@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using Ark.WPF.Infra.Interactivity.Messengers;
 using Ark.WPF.Modern.Controls;
 using Ark.WPF.Modern.Interactivity.Actions;
@@ -32,7 +27,7 @@ namespace Ark.WPF.Modern.Interactivity.Messengers
         /// </summary>
         public PopupWindow.EffectType Effect { get { return (PopupWindow.EffectType)GetValue(EffectProperty); } set { SetValue(EffectProperty, value); } }
 
-        #endregion
+        #endregion [Property] Dependency
 
         /// <summary>
         /// ダイアログを表示します。

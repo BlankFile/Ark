@@ -32,7 +32,7 @@ namespace Ark.WPF.Modern.Controls
         /// <param name="value">Password 添付プロパティに設定する値</param>
         public static void SetPassword(DependencyObject obj, string value) => obj.SetValue(PasswordProperty, value);
 
-        #endregion
+        #endregion [Property] Attached
 
         private static readonly Dictionary<int, WeakEventListener<RoutedEventHandler, RoutedEventArgs>> _listenerList =
             new Dictionary<int, WeakEventListener<RoutedEventHandler, RoutedEventArgs>>();

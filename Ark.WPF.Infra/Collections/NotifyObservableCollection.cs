@@ -44,8 +44,8 @@ namespace Ark.WPF.Infra.Collections
             _collectionChangedAction = action;
 
             _notifyWeakEvent = new WeakEventListener<NotifyCollectionChangedEventHandler, NotifyCollectionChangedEventArgs>(
-                OnCollectionChanged, 
-                h => CollectionChanged += h, 
+                OnCollectionChanged,
+                h => CollectionChanged += h,
                 h => CollectionChanged -= h);
         }
 
@@ -58,7 +58,5 @@ namespace Ark.WPF.Infra.Collections
         {
             _collectionChangedAction?.Invoke(e);
         }
-
-
     }
 }

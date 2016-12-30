@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Interactivity;
-using Ark.WPF.Infra.Interactivity.Actions;
 using Ark.WPF.Modern.Controls;
 using Ark.WPF.Modern.Interactivity.Notification;
 
@@ -39,7 +38,7 @@ namespace Ark.WPF.Modern.Interactivity.Actions
             public bool? Result { get; internal set; }
         }
 
-        #endregion
+        #endregion [InnerClass]
 
         /// <summary>
         /// アクションを実行します。

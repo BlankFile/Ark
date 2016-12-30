@@ -66,6 +66,5 @@ namespace Ark.WPF.Modern.Converters
         {
             throw new Exception();
         }
-
     }
 }

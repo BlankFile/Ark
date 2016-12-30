@@ -1,11 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-
-using System.Linq;
-using System.Threading.Tasks;
-using System;
 using System.Windows.Media.Animation;
 using Ark.WPF.Infra.Threading;
 
@@ -20,7 +16,7 @@ namespace Ark.WPF.Modern.Controls
 
         private SlideTransitionCore _core;
 
-        #endregion
+        #endregion [Member]
 
         #region [Property] Dependency
 
@@ -50,7 +46,7 @@ namespace Ark.WPF.Modern.Controls
         public static readonly DependencyProperty NextProperty = DependencyProperty.Register(
             nameof(Next), typeof(bool), typeof(SlideTransition), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnNextChanged));
 
-        /// <summary> 
+        /// <summary>
         /// 次画面へのトリガーを取得または設定します。
         /// </summary>
         public bool Next { get { return (bool)GetValue(NextProperty); } set { SetValue(NextProperty, value); } }
@@ -61,7 +57,7 @@ namespace Ark.WPF.Modern.Controls
         public static readonly DependencyProperty PreviousProperty = DependencyProperty.Register(
             nameof(Previous), typeof(bool), typeof(SlideTransition), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnPreviousChanged));
 
-        /// <summary> 
+        /// <summary>
         /// 前画面へのトリガーを取得または設定します。
         /// </summary>
         public bool Previous { get { return (bool)GetValue(PreviousProperty); } set { SetValue(PreviousProperty, value); } }
@@ -77,7 +73,7 @@ namespace Ark.WPF.Modern.Controls
         /// </summary>
         public byte Value { get { return (byte)GetValue(ValueProperty); } set { SetValue(ValueProperty, value); } }
 
-        #endregion
+        #endregion [Property] Dependency
 
         #region [Method] public override
 
@@ -91,7 +87,7 @@ namespace Ark.WPF.Modern.Controls
             base.OnApplyTemplate();
         }
 
-        #endregion
+        #endregion [Method] public override
 
         #region [Method] private static
 
@@ -127,7 +123,7 @@ namespace Ark.WPF.Modern.Controls
             }
         }
 
-        #endregion
+        #endregion [Method] private static
 
         #region [Method] private
 
@@ -166,7 +162,6 @@ namespace Ark.WPF.Modern.Controls
             });
         }
 
-        #endregion
-
+        #endregion [Method] private
     }
 }

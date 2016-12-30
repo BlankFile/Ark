@@ -1,9 +1,9 @@
 ﻿using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows;
-using Microsoft.WindowsAPICodePack.Dialogs;
-using Ark.Core.RegularExpressions;
 using System.Windows.Interactivity;
+using Ark.Core.RegularExpressions;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace Ark.WPF.Infra.Interactivity.Actions
 {
@@ -35,7 +35,7 @@ namespace Ark.WPF.Infra.Interactivity.Actions
             public string FileExtension { get; set; }
         }
 
-        #endregion
+        #endregion [InnerClass]
 
         /// <summary>
         /// アクションを実行します。

@@ -1,5 +1,4 @@
-﻿
-namespace Ark.WPF.Modern.Media.Design
+﻿namespace Ark.WPF.Modern.Media.Design
 {
     /// <summary>
     /// 透過度リソースの値を表します。

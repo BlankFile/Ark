@@ -1,5 +1,4 @@
-﻿
-namespace Ark.WPF.Modern.Interactivity.Notification
+﻿namespace Ark.WPF.Modern.Interactivity.Notification
 {
     /// <summary>
     /// ダイアログに表示するボタンの種類を表します。
@@ -23,6 +22,5 @@ namespace Ark.WPF.Modern.Interactivity.Notification
 
         /// <summary> none </summary>
         None
-
     }
 }

@@ -25,6 +25,5 @@ namespace Sample.Converters
         {
             throw new Exception();
         }
-
     }
 }

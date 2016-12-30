@@ -1,5 +1,4 @@
-﻿
-namespace System.Text
+﻿namespace System.Text
 {
     /// <summary>
     /// <see cref="StringBuilder"/> クラスの拡張メソッドを定義します。

@@ -12,13 +12,16 @@
         <ResourceDictionary Source="/Ark.WPF.Modern;component/Resources/Styles/CaptionButtonStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <ControlTemplate x:Key="ModernWindowTemplate" TargetType="Window">
+    <ControlTemplate x:Key="ModernWindowTemplate"
+                     TargetType="Window">
         <Border>
             <Border.Style>
                 <Style TargetType="Border">
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=WindowState}" Value="Maximized">
-                            <Setter Property="BorderThickness" Value="6" />
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=WindowState}"
+                                     Value="Maximized">
+                            <Setter Property="BorderThickness"
+                                    Value="6" />
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
@@ -52,30 +55,35 @@
                                 Orientation="Horizontal"
                                 Visibility="{Binding IsVisibleControlBox, RelativeSource={RelativeSource AncestorType=controls:ModernWindow}, Converter={StaticResource BoolToCollapsedConverter}}">
                         <StackPanel.Resources>
-                            <Style BasedOn="{StaticResource CaptionButtonStyle}" TargetType="Button" />
+                            <Style BasedOn="{StaticResource CaptionButtonStyle}"
+                                   TargetType="Button" />
                         </StackPanel.Resources>
-                        <Button Content="0" ToolTip="最小化">
+                        <Button Content="0"
+                                ToolTip="最小化">
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Click">
                                     <actions:ChangeWindowStateAction State="Minimized" />
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
                         </Button>
-                        <Button Content="1" ToolTip="最大化">
+                        <Button Content="1"
+                                ToolTip="最大化">
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Click">
                                     <actions:ChangeWindowStateAction State="Maximized" />
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
                         </Button>
-                        <Button Content="2" ToolTip="元に戻す">
+                        <Button Content="2"
+                                ToolTip="元に戻す">
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Click">
                                     <actions:ChangeWindowStateAction State="Normal" />
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
                         </Button>
-                        <Button Content="r" ToolTip="閉じる">
+                        <Button Content="r"
+                                ToolTip="閉じる">
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Click">
                                     <actions:CloseWindowAction />
@@ -83,14 +91,15 @@
                             </i:Interaction.Triggers>
                         </Button>
                     </StackPanel>
-                    <ContentPresenter Grid.Row="1" Grid.ColumnSpan="2" />
+                    <ContentPresenter Grid.Row="1"
+                                      Grid.ColumnSpan="2" />
                 </Grid>
             </AdornerDecorator>
-
         </Border>
     </ControlTemplate>
 
-    <Style x:Key="ModernWindowStyle" TargetType="controls:ModernWindow">
+    <Style x:Key="ModernWindowStyle"
+           TargetType="controls:ModernWindow">
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome CaptionHeight="20"
@@ -100,7 +109,7 @@
                               UseAeroCaptionButtons="False" />
             </Setter.Value>
         </Setter>
-        <Setter Property="Template" Value="{StaticResource ModernWindowTemplate}" />
+        <Setter Property="Template"
+                Value="{StaticResource ModernWindowTemplate}" />
     </Style>
-
 </ResourceDictionary>

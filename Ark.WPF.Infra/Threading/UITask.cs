@@ -38,7 +38,5 @@ namespace Ark.WPF.Infra.Threading
         {
             return TaskFactory.StartNew(func);
         }
-
     }
-
 }

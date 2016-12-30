@@ -1,6 +1,5 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace System.Collections.Generic
@@ -49,7 +48,7 @@ namespace System.Collections.Generic
             return enumerator.MoveNext() && !enumerator.MoveNext();
         }
 
-        #endregion
+        #endregion 判断
 
         #region 反復
 
@@ -282,7 +281,7 @@ namespace System.Collections.Generic
             }
         }
 
-        #endregion
+        #endregion 反復
 
         #region 索引
 
@@ -311,7 +310,7 @@ namespace System.Collections.Generic
             return null;
         }
 
-        #endregion
+        #endregion 索引
 
         #region 変換
 
@@ -350,7 +349,7 @@ namespace System.Collections.Generic
             return new HashSet<T>(collection);
         }
 
-        #endregion
+        #endregion 変換
 
         #region 非同期
 
@@ -367,7 +366,6 @@ namespace System.Collections.Generic
             var tasks = collection.Select(x => Task.Run(() => func(x)));
 
             return await Task.WhenAll(collection.Select(x => Task.Run(() => func(x))));
-
         }
 
         /// <summary>
@@ -398,6 +396,6 @@ namespace System.Collections.Generic
             });
         }
 
-        #endregion
+        #endregion 非同期
     }
 }

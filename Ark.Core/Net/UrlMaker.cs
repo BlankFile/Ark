@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net;
 using System.Net.Http;
 using System.Web;
 
@@ -11,7 +10,6 @@ namespace Ark.Core.Net
     /// </summary>
     public static class UrlMaker
     {
-
         /// <summary>
         /// GET 通信でのパラメータを作成します。
         /// </summary>
@@ -76,7 +74,5 @@ namespace Ark.Core.Net
 
             return new FormUrlEncodedContent(contents);
         }
-
-
     }
 }

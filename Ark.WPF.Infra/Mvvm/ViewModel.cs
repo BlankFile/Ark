@@ -1,5 +1,4 @@
-﻿
-namespace Ark.WPF.Infra.Mvvm
+﻿namespace Ark.WPF.Infra.Mvvm
 {
     /// <summary>
     /// クライアントとビジネスロジックを結合するための機能を提供します。
@@ -11,8 +10,6 @@ namespace Ark.WPF.Infra.Mvvm
         /// </summary>
         public ViewModel()
         {
-
         }
-
     }
 }

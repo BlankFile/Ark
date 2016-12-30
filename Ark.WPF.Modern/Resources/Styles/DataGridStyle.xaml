@@ -152,14 +152,13 @@
                                                     ItemsPanel="{TemplateBinding ItemsPanel}"
                                                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                                 <!--<i:Interaction.Behaviors>
-                                    <ei:FluidMoveBehavior AppliesTo="Self" Duration="0:0:1" >
+                                    <ei:FluidMoveBehavior AppliesTo="Self" Duration="0:0:1">
                                         <ei:FluidMoveBehavior.EaseY>
-                                            <CircleEase EasingMode="EaseOut"  />
+                                            <CircleEase EasingMode="EaseOut" />
                                         </ei:FluidMoveBehavior.EaseY>
                                         <ei:FluidMoveBehavior.EaseX>
                                             <CircleEase EasingMode="EaseOut" />
                                         </ei:FluidMoveBehavior.EaseX>
-
                                     </ei:FluidMoveBehavior>
                                 </i:Interaction.Behaviors>-->
                             </DataGridCellsPresenter>
@@ -201,7 +200,6 @@
         <Style.Triggers>
             <Trigger Property="IsSelected"
                      Value="True">
-
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -272,5 +270,4 @@
         <Setter Property="RowDetailsVisibilityMode"
                 Value="Collapsed" />
     </Style>
-
 </ResourceDictionary>

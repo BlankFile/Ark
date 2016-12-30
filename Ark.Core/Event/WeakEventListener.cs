@@ -23,7 +23,7 @@ namespace Ark.Core.Event
         /// </summary>
         private Action _removeAction;
 
-        #endregion
+        #endregion [Member]
 
         #region [Constructor]
 
@@ -45,7 +45,7 @@ namespace Ark.Core.Event
             _removeAction = () => remove(weakHandler);
         }
 
-        #endregion
+        #endregion [Constructor]
 
         #region [Method] private static
 
@@ -62,7 +62,7 @@ namespace Ark.Core.Event
             listener?._handler?.Invoke(sender, args);
         }
 
-        #endregion
+        #endregion [Method] private static
 
         #region [InterfaceImpl] IDisposable
 
@@ -104,6 +104,6 @@ namespace Ark.Core.Event
             Dispose(false);
         }
 
-        #endregion
+        #endregion [InterfaceImpl] IDisposable
     }
 }

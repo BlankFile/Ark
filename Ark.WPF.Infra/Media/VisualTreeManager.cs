@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Media;
 
 namespace Ark.WPF.Infra.Media
@@ -40,6 +35,5 @@ namespace Ark.WPF.Infra.Media
                 return FindVisualParent<T>(parentObject);
             }
         }
-
     }
 }

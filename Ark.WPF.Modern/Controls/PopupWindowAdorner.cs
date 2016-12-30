@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 
 namespace Ark.WPF.Modern.Controls
@@ -74,6 +68,6 @@ namespace Ark.WPF.Modern.Controls
             return new Size(Window.ActualWidth, Window.ActualHeight);
         }
 
-        #endregion
+        #endregion [Method] override
     }
 }

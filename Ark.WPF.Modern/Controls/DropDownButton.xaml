@@ -11,10 +11,13 @@
 
     <UserControl.Template>
         <ControlTemplate TargetType="{x:Type UserControl}">
-            <Grid Width="{Binding Path=Width, RelativeSource={RelativeSource AncestorType=controls:DropDownButton}}" Height="{Binding Path=Height, RelativeSource={RelativeSource AncestorType=controls:DropDownButton}}">
+            <Grid Width="{Binding Path=Width, RelativeSource={RelativeSource AncestorType=controls:DropDownButton}}"
+                  Height="{Binding Path=Height, RelativeSource={RelativeSource AncestorType=controls:DropDownButton}}">
                 <Grid.Resources>
-                    <Style BasedOn="{StaticResource {x:Type MenuItem}}" TargetType="MenuItem">
-                        <EventSetter Event="Click" Handler="ClickItem" />
+                    <Style BasedOn="{StaticResource {x:Type MenuItem}}"
+                           TargetType="MenuItem">
+                        <EventSetter Event="Click"
+                                     Handler="ClickItem" />
                     </Style>
                 </Grid.Resources>
                 <Grid.ColumnDefinitions>
@@ -33,7 +36,8 @@
                 <!--#endregion-->
 
                 <!--#region トグル部-->
-                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <StackPanel Grid.Column="1"
+                            Orientation="Horizontal">
                     <Border Height="{Binding Path=Height, ElementName=MainButton}"
                             Margin="0"
                             Padding="0"
@@ -72,7 +76,8 @@
                             <actions:CommandTriggerAction Command="{Binding RelativeSource={RelativeSource AncestorType=controls:DropDownButton}, Path=OpenedCommand}" />
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
-                    <Grid Name="DropDown" SnapsToDevicePixels="True">
+                    <Grid Name="DropDown"
+                          SnapsToDevicePixels="True">
                         <Border x:Name="DropDownBorder"
                                 Background="{DynamicResource ColorTheme}"
                                 BorderBrush="{DynamicResource ColorMain}"

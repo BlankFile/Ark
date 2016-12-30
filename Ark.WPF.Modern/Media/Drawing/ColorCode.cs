@@ -1,5 +1,4 @@
-﻿
-namespace Ark.WPF.Modern.Media.Drawing
+﻿namespace Ark.WPF.Modern.Media.Drawing
 {
     /// <summary>
     /// 色リソースの値を表します。
@@ -101,6 +100,5 @@ namespace Ark.WPF.Modern.Media.Drawing
 
         /// <summary> 透明 </summary>
         public const string Transparent = "#00FFFFFF";
-
     }
 }

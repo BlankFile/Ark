@@ -1,12 +1,5 @@
-﻿using System;
-using System.Linq;
-using System.Diagnostics.Tracing;
-using System.Threading;
-using System.Windows.Input;
-using Ark.Core.IO;
+﻿using System.Windows.Input;
 using Ark.WPF.Infra.Mvvm;
-using System.IO;
-using System.Text;
 using Ark.WPF.Modern.Interactivity.Messengers;
 using Ark.WPF.Modern.Interactivity.Notification;
 using Sample.Common;
@@ -37,14 +30,12 @@ namespace Sample.ViewModels
             });
         }
 
-        #endregion
+        #endregion [Constructor]
 
         public ShowModernDialogMessenger DialogMessenger { get { return Get<ShowModernDialogMessenger>(); } set { Set(value); } }
         public ShowModernMessageMessenger MessageMessenger { get { return Get<ShowModernMessageMessenger>(); } set { Set(value); } }
 
-
         public ICommand DialogCommand { get; }
         public ICommand MessageCommand { get; }
-
     }
 }

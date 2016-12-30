@@ -1,7 +1,4 @@
-﻿
-using System.Windows.Media.Animation;
-
-namespace System.Windows.Media.Animation
+﻿namespace System.Windows.Media.Animation
 {
     /// <summary>
     /// <see cref="Timeline"/> クラスの拡張メソッドを定義します。

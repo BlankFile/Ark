@@ -41,7 +41,7 @@ namespace Ark.WPF.Infra.Interactivity.Actions
             public bool Result { get; internal set; }
         }
 
-        #endregion
+        #endregion [InnerClass]
 
         /// <summary>
         /// アクションを実行します。
@@ -67,6 +67,7 @@ namespace Ark.WPF.Infra.Interactivity.Actions
                 case MessageBoxResult.Yes:
                     args.Result = true;
                     break;
+
                 default:
                     args.Result = false;
                     break;

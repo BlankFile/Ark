@@ -108,6 +108,5 @@ namespace Ark.Core.IO
 
             return true;
         }
-
     }
 }

@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Ark.Core.Threading
 {
     /// <summary>
-    /// async/await ステートメントをロック可能なオブジェクトを表します。 
+    /// async/await ステートメントをロック可能なオブジェクトを表します。
     /// </summary>
     public sealed class AsyncLock
     {
@@ -64,7 +61,7 @@ namespace Ark.Core.Threading
 
             private bool _disposed = false;
 
-            void Dispose(bool disposing)
+            private void Dispose(bool disposing)
             {
                 if (!_disposed)
                 {
@@ -89,9 +86,7 @@ namespace Ark.Core.Threading
                 Dispose(false);
             }
 
-            #endregion
-
-
+            #endregion [InterfaceImpl] IDisposable
         }
     }
 }

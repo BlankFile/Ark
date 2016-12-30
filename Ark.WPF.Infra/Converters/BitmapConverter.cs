@@ -1,5 +1,4 @@
 ﻿using System.Windows.Media.Imaging;
-using Ark.WPF.Infra.Converters;
 using Ark.WPF.Infra.Media;
 
 namespace Ark.WPF.Infra.Converters

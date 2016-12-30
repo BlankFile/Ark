@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
-using Sample.Properties;
 using Ark.WPF.Infra.Mvvm;
-using System.Threading.Tasks;
-using Ark.WPF.Infra.Interactivity.Messengers;
-using Ark.WPF.Modern.Interactivity.Messengers;
-using Sample.Common;
-using Ark.WPF.Modern.Interactivity.Notification;
+using Sample.Properties;
 
 namespace Sample.ViewModels
 {
@@ -36,7 +31,7 @@ namespace Sample.ViewModels
             Information = 3
         }
 
-        #endregion
+        #endregion [enum]
 
         #region [Constructor]
 
@@ -57,36 +52,36 @@ namespace Sample.ViewModels
             ChangePageCommand = new ActionCommand<MenuType>(ChangePage, CanChangePage);
         }
 
-        #endregion
+        #endregion [Constructor]
 
         #region [Property]
 
-        /// <summary> 
+        /// <summary>
         /// ウインドウのX座標
         /// </summary>
         public double Left { get { return Get<double>(); } set { Set(value); } }
 
-        /// <summary> 
+        /// <summary>
         /// ウインドウのY座標
         /// </summary>
         public double Top { get { return Get<double>(); } set { Set(value); } }
 
-        /// <summary> 
+        /// <summary>
         /// ウインドウの横幅
         /// </summary>
         public double Width { get { return Get<double>(); } set { Set(value); } }
 
-        /// <summary> 
+        /// <summary>
         /// ウインドウの縦幅
         /// </summary>
         public double Height { get { return Get<double>(); } set { Set(value); } }
 
-        /// <summary> 
+        /// <summary>
         /// ウインドウの状態
         /// </summary>
         public WindowState State { get { return Get<WindowState>(); } set { Set(value); } }
 
-        /// <summary> 
+        /// <summary>
         /// 読み込み中フラグ
         /// </summary>
         public bool IsLoading { get { return Get<bool>(); } set { Set(value); } }
@@ -96,36 +91,36 @@ namespace Sample.ViewModels
         /// </summary>
         public MenuType CurrentMenu { get { return Get<MenuType>(); } set { Set(value); } }
 
-        /// <summary> 
+        /// <summary>
         /// 画面遷移（進む）フラグ
         /// </summary>
         public bool Next { get { return Get<bool>(); } set { Set(value); } }
 
-        /// <summary> 
+        /// <summary>
         /// 画面遷移（戻る）フラグ
         /// </summary>
         public bool Previous { get { return Get<bool>(); } set { Set(value); } }
 
-        /// <summary> 
+        /// <summary>
         /// 画面を遷移する量
         /// </summary>
         public byte SlideValue { get { return Get<byte>(); } set { Set(value); } }
 
-        #endregion
+        #endregion [Property]
 
         #region [Property] Command
 
-        /// <summary> 
+        /// <summary>
         /// 読み込み時の処理
         /// </summary>
         public ICommand LoadedCommand { get; }
 
-        /// <summary> 
+        /// <summary>
         /// キー押下の処理
         /// </summary>
         public ICommand PreviewKeyDownCommand { get; }
 
-        /// <summary> 
+        /// <summary>
         /// 終了時の処理
         /// </summary>
         public ICommand ClosingCommand { get; }
@@ -135,7 +130,7 @@ namespace Sample.ViewModels
         /// </summary>
         public ICommand ChangePageCommand { get; }
 
-        #endregion
+        #endregion [Property] Command
 
         #region [Method] Command
 
@@ -146,9 +141,7 @@ namespace Sample.ViewModels
 
         internal void PreviewKeyDown(KeyEventArgs e)
         {
-
         }
-
 
         internal bool CanChangePage(MenuType menuType)
         {
@@ -173,8 +166,6 @@ namespace Sample.ViewModels
             CurrentMenu = menuType;
         }
 
-
-        #endregion
-
+        #endregion [Method] Command
     }
 }

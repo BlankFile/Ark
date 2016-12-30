@@ -1,11 +1,10 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using System.Windows.Input;
-using Sample.Properties;
 using Ark.WPF.Infra.Mvvm;
 using Ark.WPF.Modern.Media.Drawing;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Linq;
+using Sample.Properties;
 
 namespace Sample.ViewModels
 {
@@ -24,7 +23,7 @@ namespace Sample.ViewModels
             ChangeColorCommand = new ActionCommand<string>(ChangeColor);
         }
 
-        #endregion
+        #endregion [Constructor]
 
         #region [Property]
 
@@ -33,7 +32,7 @@ namespace Sample.ViewModels
         public string InverseMainTheme { get { return Get<string>(); } set { Set(value); } }
         public string MainColor { get { return Get<string>(); } set { Set(value); } }
 
-        #endregion
+        #endregion [Property]
 
         #region [Property] Command
 
@@ -41,7 +40,7 @@ namespace Sample.ViewModels
         public ICommand ChangeThemeCommand { get; }
         public ICommand ChangeColorCommand { get; }
 
-        #endregion
+        #endregion [Property] Command
 
         #region [Method]
 
@@ -73,7 +72,7 @@ namespace Sample.ViewModels
             Settings.Default.Save();
         }
 
-        #endregion
+        #endregion [Method]
 
         #region [Method] private
 
@@ -108,7 +107,6 @@ namespace Sample.ViewModels
             };
         }
 
-        #endregion
-
+        #endregion [Method] private
     }
 }

@@ -1,5 +1,4 @@
-﻿
-namespace Ark.Core.RegularExpressions
+﻿namespace Ark.Core.RegularExpressions
 {
     /// <summary>
     /// 正規表現のパターンを定義します。
@@ -25,6 +24,5 @@ namespace Ark.Core.RegularExpressions
         /// フォルダーパス
         /// </summary>
         public const string FolderPath = "^([a-zA-Z]:)?(\\\\[^<>:\"/\\\\|?*]+)+\\\\?$";
-
     }
 }

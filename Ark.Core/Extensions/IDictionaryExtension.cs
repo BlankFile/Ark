@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace System.Collections.Generic
+﻿namespace System.Collections.Generic
 {
     /// <summary>
     /// <see cref="IDictionary"/> インターフェースの拡張メソッドを定義します。
@@ -28,7 +22,7 @@ namespace System.Collections.Generic
             }
         }
 
-        #endregion
+        #endregion 変更
 
         #region 取得
 
@@ -50,6 +44,6 @@ namespace System.Collections.Generic
             return value;
         }
 
-        #endregion
+        #endregion 取得
     }
 }

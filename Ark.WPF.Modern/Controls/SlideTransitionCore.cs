@@ -1,11 +1,8 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.Windows;
-using System.Windows.Controls;
-
 using System.Linq;
 using System.Threading.Tasks;
-using System;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media.Animation;
 
 namespace Ark.WPF.Modern.Controls
@@ -33,7 +30,7 @@ namespace Ark.WPF.Modern.Controls
             Previous = -1
         }
 
-        #endregion
+        #endregion [enum]
 
         #region [Member]
 
@@ -52,7 +49,7 @@ namespace Ark.WPF.Modern.Controls
         /// </summary>
         private int _index = -1;
 
-        #endregion
+        #endregion [Member]
 
         #region [Property] Dependency
 
@@ -133,7 +130,7 @@ namespace Ark.WPF.Modern.Controls
         /// </summary>
         public double Display2TranslateX { get { return (double)GetValue(Display2TranslateXProperty); } set { SetValue(Display2TranslateXProperty, value); } }
 
-        #endregion
+        #endregion [Property] Dependency
 
         #region [Method] override
 
@@ -147,7 +144,7 @@ namespace Ark.WPF.Modern.Controls
             base.OnApplyTemplate();
         }
 
-        #endregion
+        #endregion [Method] override
 
         #region [Method]
 
@@ -205,7 +202,6 @@ namespace Ark.WPF.Modern.Controls
             }
         }
 
-        #endregion
-
+        #endregion [Method]
     }
 }

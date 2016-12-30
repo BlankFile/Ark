@@ -41,16 +41,25 @@
                     Orientation="Horizontal">
             <StackPanel.Resources>
                 <Style TargetType="StackPanel">
-                    <Setter Property="Margin" Value="60,0,0,0" />
-                    <Setter Property="HorizontalAlignment" Value="Right" />
-                    <Setter Property="Orientation" Value="Horizontal" />
+                    <Setter Property="Margin"
+                            Value="60,0,0,0" />
+                    <Setter Property="HorizontalAlignment"
+                            Value="Right" />
+                    <Setter Property="Orientation"
+                            Value="Horizontal" />
                 </Style>
-                <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
-                    <Setter Property="Margin" Value="0,10,10,10" />
-                    <Setter Property="Width" Value="80" />
-                    <Setter Property="HorizontalAlignment" Value="Left" />
-                    <Setter Property="Padding" Value="0,1,0,0" />
-                    <Setter Property="Visibility" Value="0,1,0,0" />
+                <Style BasedOn="{StaticResource {x:Type Button}}"
+                       TargetType="{x:Type Button}">
+                    <Setter Property="Margin"
+                            Value="0,10,10,10" />
+                    <Setter Property="Width"
+                            Value="80" />
+                    <Setter Property="HorizontalAlignment"
+                            Value="Left" />
+                    <Setter Property="Padding"
+                            Value="0,1,0,0" />
+                    <Setter Property="Visibility"
+                            Value="0,1,0,0" />
                 </Style>
             </StackPanel.Resources>
 

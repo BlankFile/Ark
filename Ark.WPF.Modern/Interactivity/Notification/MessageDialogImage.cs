@@ -1,5 +1,4 @@
-﻿
-namespace Ark.WPF.Modern.Interactivity.Notification
+﻿namespace Ark.WPF.Modern.Interactivity.Notification
 {
     /// <summary>
     /// メッセージダイアログに表示するアイコンの種類を表します。
@@ -17,6 +16,5 @@ namespace Ark.WPF.Modern.Interactivity.Notification
 
         /// <summary> エラー </summary>
         Error
-
     }
 }

@@ -1,20 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 using Ark.Core.Event;
 using Ark.WPF.Infra.Media;
@@ -27,7 +18,6 @@ namespace Ark.WPF.Modern.Controls
     /// </summary>
     public class PopupWindow : ItemsControl
     {
-
         #region [enum]
 
         /// <summary>
@@ -51,7 +41,7 @@ namespace Ark.WPF.Modern.Controls
             Custom
         }
 
-        #endregion
+        #endregion [enum]
 
         #region [Constructor]
 
@@ -63,7 +53,7 @@ namespace Ark.WPF.Modern.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(PopupWindow), new FrameworkPropertyMetadata(typeof(PopupWindow)));
         }
 
-        #endregion
+        #endregion [Constructor]
 
         #region [Member] readonly
 
@@ -76,7 +66,6 @@ namespace Ark.WPF.Modern.Controls
         /// 非表示時のフェードアニメーション
         /// </summary>
         private static readonly Storyboard _fadeCloseAnimation = new FadeAnimation(1, 0, TimeSpan.FromMilliseconds(200)).ToStoryboard();
-
 
         /// <summary>
         /// 表示時のズームアニメーション
@@ -93,9 +82,9 @@ namespace Ark.WPF.Modern.Controls
         /// </summary>
         private static readonly object _lockObject = new object();
 
-        #endregion
+        #endregion [Member] readonly
 
-        #region [Member] 
+        #region [Member]
 
         /// <summary>
         /// アドナーを閉じる時の処理
@@ -117,7 +106,7 @@ namespace Ark.WPF.Modern.Controls
         /// </summary>
         private Storyboard _closeAnimation;
 
-        #endregion
+        #endregion [Member]
 
         #region [Property] public static
 
@@ -131,7 +120,7 @@ namespace Ark.WPF.Modern.Controls
         /// </summary>
         public static Storyboard CustomCloseAnimation { get; set; }
 
-        #endregion
+        #endregion [Property] public static
 
         #region [Method] override
 
@@ -163,7 +152,7 @@ namespace Ark.WPF.Modern.Controls
             await _openAnimation?.BeginAsync(this);
         }
 
-        #endregion
+        #endregion [Method] override
 
         #region [Method] public static
 
@@ -278,7 +267,7 @@ namespace Ark.WPF.Modern.Controls
             }
         }
 
-        #endregion
+        #endregion [Method] public static
 
         #region [Method] protected
 
@@ -326,7 +315,7 @@ namespace Ark.WPF.Modern.Controls
             }
         }
 
-        #endregion
+        #endregion [Method] protected
 
         #region [Method] private static
 
@@ -412,7 +401,7 @@ namespace Ark.WPF.Modern.Controls
             return adorner;
         }
 
-        #endregion
+        #endregion [Method] private static
 
         #region [Method] private
 
@@ -490,8 +479,6 @@ namespace Ark.WPF.Modern.Controls
             }
         }
 
-        #endregion
-
-
+        #endregion [Method] private
     }
 }

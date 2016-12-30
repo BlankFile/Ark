@@ -1,5 +1,4 @@
-﻿
-using Ark.WPF.Modern.Controls;
+﻿using Ark.WPF.Modern.Controls;
 
 namespace Sample.Views
 {

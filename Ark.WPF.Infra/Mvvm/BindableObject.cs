@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 
 namespace Ark.WPF.Infra.Mvvm
@@ -23,7 +22,7 @@ namespace Ark.WPF.Infra.Mvvm
         private Dictionary<string, Action> _afterActionDic = new Dictionary<string, Action>();
         private Dictionary<string, List<string>> _errorDic = new Dictionary<string, List<string>>();
 
-        #endregion
+        #endregion [Member]
 
         #region [Method] 変更通知
 
@@ -209,7 +208,7 @@ namespace Ark.WPF.Infra.Mvvm
             }
         }
 
-        #endregion
+        #endregion [Method] 変更通知
 
         #region [Method] エラー補助
 
@@ -294,8 +293,7 @@ namespace Ark.WPF.Infra.Mvvm
             clears.ForEach(x => RemoveError(x));
         }
 
-
-        #endregion
+        #endregion [Method] エラー補助
 
         #region [InterfaceImpl] INotifyDataErrorInfo
 
@@ -329,6 +327,6 @@ namespace Ark.WPF.Infra.Mvvm
         /// </summary>
         public bool HasErrors => _errorDic.Any();
 
-        #endregion
+        #endregion [InterfaceImpl] INotifyDataErrorInfo
     }
 }

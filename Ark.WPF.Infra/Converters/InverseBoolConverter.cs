@@ -1,5 +1,4 @@
-﻿
-namespace Ark.WPF.Infra.Converters
+﻿namespace Ark.WPF.Infra.Converters
 {
     /// <summary>
     /// 真偽値を反転するコンバーターを表します。
@@ -15,6 +14,5 @@ namespace Ark.WPF.Infra.Converters
         {
             return !value;
         }
-
     }
 }

@@ -63,7 +63,6 @@ namespace Ark.WPF.Modern.Controls
         /// </summary>
         public bool? Result { get { return (bool?)GetValue(ResultProperty); } set { SetValue(ResultProperty, value); } }
 
-
-        #endregion
+        #endregion [Property] Dependency
     }
 }

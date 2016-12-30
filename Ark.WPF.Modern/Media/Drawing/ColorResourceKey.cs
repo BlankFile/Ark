@@ -1,5 +1,4 @@
-﻿
-namespace Ark.WPF.Modern.Media.Drawing
+﻿namespace Ark.WPF.Modern.Media.Drawing
 {
     /// <summary>
     /// 色リソースのキーを表します。

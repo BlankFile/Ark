@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
-using System.Web;
 
 namespace Ark.Core.Net
 {
@@ -52,6 +51,5 @@ namespace Ark.Core.Net
                 Timeout = (timeOut.TotalSeconds < 1) ? TimeSpan.FromSeconds(10) : timeOut
             };
         }
-
     }
 }

@@ -32,10 +32,10 @@ namespace Ark.WPF.Modern.Controls
         {
             base.OnInitialized(e);
 
-            var circleList = new List<Ellipse> 
+            var circleList = new List<Ellipse>
             {
-                circle1, circle2, circle3, circle4, circle5, 
-                circle6, circle7, circle8, circle9, circle10 
+                circle1, circle2, circle3, circle4, circle5,
+                circle6, circle7, circle8, circle9, circle10
             };
 
             var angleList = Enumerable.Range(1, circleList.Count).SelectToList(i => i * CIRCLE_ANGLE);
@@ -62,8 +62,6 @@ namespace Ark.WPF.Modern.Controls
             return angle * Math.PI / 180;
         }
 
-        #endregion
-
-
+        #endregion 円を配置
     }
 }

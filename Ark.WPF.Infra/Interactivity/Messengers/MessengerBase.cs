@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows;
 using System.Windows.Interactivity;
 using Ark.WPF.Infra.Interactivity.Triggers;
 
@@ -28,7 +22,7 @@ namespace Ark.WPF.Infra.Interactivity.Messengers
         /// </summary>
         public DependencyObject Target { get { return (DependencyObject)GetValue(TargetProperty); } set { SetValue(TargetProperty, value); } }
 
-        #endregion
+        #endregion [Property] Dependency
 
         #region [Method] protected
 
@@ -38,7 +32,7 @@ namespace Ark.WPF.Infra.Interactivity.Messengers
         /// <param name="control">新しい通知対象</param>
         protected virtual void TargetChanged(object control) { }
 
-        #endregion
+        #endregion [Method] protected
 
         #region [Method] private static
 
@@ -54,7 +48,7 @@ namespace Ark.WPF.Infra.Interactivity.Messengers
             messenger?.TargetChanged(e.NewValue);
         }
 
-        #endregion
+        #endregion [Method] private static
     }
 
     /// <summary>
@@ -73,7 +67,7 @@ namespace Ark.WPF.Infra.Interactivity.Messengers
         /// </summary>
         private MessengerTrigger<TControl> _trigger;
 
-        #endregion
+        #endregion [Member]
 
         #region [Constructor]
 
@@ -91,7 +85,7 @@ namespace Ark.WPF.Infra.Interactivity.Messengers
             Subscribe(target);
         }
 
-        #endregion
+        #endregion [Constructor]
 
         #region [Method] public
 
@@ -103,7 +97,7 @@ namespace Ark.WPF.Infra.Interactivity.Messengers
             _trigger?.Detach();
         }
 
-        #endregion
+        #endregion [Method] public
 
         #region [Method] protected
 
@@ -130,7 +124,7 @@ namespace Ark.WPF.Infra.Interactivity.Messengers
             _trigger?.Invoke(parameter);
         }
 
-        #endregion
+        #endregion [Method] protected
 
         #region [Method] protected override
 
@@ -149,7 +143,6 @@ namespace Ark.WPF.Infra.Interactivity.Messengers
             }
         }
 
-        #endregion
+        #endregion [Method] protected override
     }
-
 }

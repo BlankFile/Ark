@@ -8,15 +8,24 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type Button}">
-        <Setter Property="Background" Value="{DynamicResource ColorMain}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource ColorMain}" />
-        <Setter Property="Foreground" Value="{StaticResource ColorWhite}" />
-        <Setter Property="VerticalAlignment" Value="Stretch" />
-        <Setter Property="Height" Value="24" />
-        <Setter Property="Padding" Value="8,2" />
-        <Setter Property="Cursor" Value="Hand" />
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="FocusVisualStyle" Value="{DynamicResource {x:Static SystemParameters.FocusVisualStyleKey}}" />
+        <Setter Property="Background"
+                Value="{DynamicResource ColorMain}" />
+        <Setter Property="BorderBrush"
+                Value="{DynamicResource ColorMain}" />
+        <Setter Property="Foreground"
+                Value="{StaticResource ColorWhite}" />
+        <Setter Property="VerticalAlignment"
+                Value="Stretch" />
+        <Setter Property="Height"
+                Value="24" />
+        <Setter Property="Padding"
+                Value="8,2" />
+        <Setter Property="Cursor"
+                Value="Hand" />
+        <Setter Property="SnapsToDevicePixels"
+                Value="True" />
+        <Setter Property="FocusVisualStyle"
+                Value="{DynamicResource {x:Static SystemParameters.FocusVisualStyleKey}}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -34,20 +43,29 @@
                         </Border>
                     </Border>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Opacity" Value="{DynamicResource FocusOpacity}" />
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter TargetName="border"
+                                    Property="Opacity"
+                                    Value="{DynamicResource FocusOpacity}" />
                         </Trigger>
-                        <Trigger Property="IsPressed" Value="True" />
-                        <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="border" Property="Opacity" Value="{DynamicResource FocusOpacity}" />
-                            <Setter Property="BorderBrush" Value="{DynamicResource ColorGray}" />
-                            <Setter Property="Background" Value="{DynamicResource ColorGray}" />
-                            <Setter Property="Foreground" Value="{StaticResource ColorWhite}" />
+                        <Trigger Property="IsPressed"
+                                 Value="True" />
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter TargetName="border"
+                                    Property="Opacity"
+                                    Value="{DynamicResource FocusOpacity}" />
+                            <Setter Property="BorderBrush"
+                                    Value="{DynamicResource ColorGray}" />
+                            <Setter Property="Background"
+                                    Value="{DynamicResource ColorGray}" />
+                            <Setter Property="Foreground"
+                                    Value="{StaticResource ColorWhite}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-
 </ResourceDictionary>

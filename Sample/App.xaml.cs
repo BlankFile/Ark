@@ -1,5 +1,4 @@
 ﻿using Ark.WPF.Infra;
-using Ark.WPF.Modern;
 
 namespace Sample
 {
@@ -8,6 +7,5 @@ namespace Sample
     /// </summary>
     public partial class App : AppMain
     {
-
     }
 }

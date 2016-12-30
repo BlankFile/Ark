@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
@@ -18,7 +14,7 @@ namespace Ark.WPF.Infra.Media.Animation
 
         private string _transformPath;
 
-        #endregion
+        #endregion [Member]
 
         #region [Constructor]
 
@@ -59,7 +55,7 @@ namespace Ark.WPF.Infra.Media.Animation
         /// <param name="fillBehavior"><see cref="Timeline"/> の動作</param>
         public ZoomAnimation(double fromValue, double toValue, Duration duration, FillBehavior fillBehavior) : base(fromValue, toValue, duration, fillBehavior) { }
 
-        #endregion
+        #endregion [Constructor]
 
         #region [Method] public
 
@@ -100,7 +96,6 @@ namespace Ark.WPF.Infra.Media.Animation
             return storyboard;
         }
 
-        #endregion
-
+        #endregion [Method] public
     }
 }

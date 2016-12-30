@@ -13,7 +13,8 @@
             <Setter.Value>
                 <ControlTemplate TargetType="controls:SlideTransitionCore">
                     <Grid ClipToBounds="True">
-                        <Grid Name="container" Width="{Binding ContainerWidth, RelativeSource={RelativeSource AncestorType=controls:SlideTransitionCore}, Mode=OneWayToSource}">
+                        <Grid Name="container"
+                              Width="{Binding ContainerWidth, RelativeSource={RelativeSource AncestorType=controls:SlideTransitionCore}, Mode=OneWayToSource}">
                             <Grid.RenderTransform>
                                 <TranslateTransform X="{Binding TranslateX, RelativeSource={RelativeSource AncestorType=controls:SlideTransitionCore}}" />
                             </Grid.RenderTransform>
@@ -40,7 +41,8 @@
             <Setter.Value>
                 <ControlTemplate TargetType="controls:SlideTransition">
                     <Grid ClipToBounds="True">
-                        <controls:SlideTransitionCore x:Name="core" Items="{Binding Items, RelativeSource={RelativeSource AncestorType=controls:SlideTransition}}" />
+                        <controls:SlideTransitionCore x:Name="core"
+                                                      Items="{Binding Items, RelativeSource={RelativeSource AncestorType=controls:SlideTransition}}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

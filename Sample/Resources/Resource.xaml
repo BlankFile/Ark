@@ -10,5 +10,4 @@
     <converters:CheckTwoStringConverter x:Key="CheckTwoStringConverter" />
 
     <PopupAnimation x:Key="{x:Static SystemParameters.MenuPopupAnimationKey}">None</PopupAnimation>
-
 </ResourceDictionary>

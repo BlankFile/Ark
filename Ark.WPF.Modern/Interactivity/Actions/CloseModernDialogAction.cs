@@ -1,7 +1,5 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Interactivity;
-using Ark.WPF.Infra.Interactivity.Actions;
 using Ark.WPF.Modern.Controls;
 
 namespace Ark.WPF.Modern.Interactivity.Actions

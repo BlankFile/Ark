@@ -28,7 +28,7 @@ namespace Ark.WPF.Infra.Interactivity.Actions
             public bool IsSelectAll { get; set; }
         }
 
-        #endregion
+        #endregion [InnerClass]
 
         /// <summary>
         /// アクションを実行します。

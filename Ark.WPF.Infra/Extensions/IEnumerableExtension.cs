@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Ark.WPF.Infra.Collections;
+﻿using Ark.WPF.Infra.Collections;
 
 namespace System.Collections.Generic
 {
@@ -21,6 +20,6 @@ namespace System.Collections.Generic
             return new ConcurrencyCollection<T>(collection);
         }
 
-        #endregion
+        #endregion 変換
     }
 }

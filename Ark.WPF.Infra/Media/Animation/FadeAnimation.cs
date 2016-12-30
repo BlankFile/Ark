@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows;
 using System.Windows.Media.Animation;
 
 namespace Ark.WPF.Infra.Media.Animation
@@ -53,7 +47,7 @@ namespace Ark.WPF.Infra.Media.Animation
         /// <param name="fillBehavior"><see cref="Timeline"/> の動作</param>
         public FadeAnimation(double fromValue, double toValue, Duration duration, FillBehavior fillBehavior) : base(fromValue, toValue, duration, fillBehavior) { Initialize(); }
 
-        #endregion
+        #endregion [Constructor]
 
         /// <summary>
         /// Opacity プロパティをアニメーションの対象に設定します。
@@ -62,6 +56,5 @@ namespace Ark.WPF.Infra.Media.Animation
         {
             Storyboard.SetTargetProperty(this, new PropertyPath(nameof(FrameworkElement.Opacity)));
         }
-
     }
 }

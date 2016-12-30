@@ -46,6 +46,5 @@ namespace Ark.Core.IO
                 Copy(dir, Path.Combine(destDirPath, Path.GetFileName(dir)));
             }
         }
-
     }
 }

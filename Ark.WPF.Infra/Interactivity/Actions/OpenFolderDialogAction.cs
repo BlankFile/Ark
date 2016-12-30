@@ -1,6 +1,6 @@
 ﻿using System.Windows;
-using Microsoft.WindowsAPICodePack.Dialogs;
 using System.Windows.Interactivity;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace Ark.WPF.Infra.Interactivity.Actions
 {
@@ -27,7 +27,7 @@ namespace Ark.WPF.Infra.Interactivity.Actions
             public string SelectedPath { get; internal set; }
         }
 
-        #endregion
+        #endregion [InnerClass]
 
         /// <summary>
         /// アクションを実行します。

@@ -34,12 +34,18 @@
     <!--#endregion-->
 
     <modern_controls:ModernWindow.Style>
-        <Style BasedOn="{StaticResource ModernWindowStyle}" TargetType="modern_controls:ModernWindow">
-            <Setter Property="WindowState" Value="{Binding State}" />
-            <Setter Property="Top" Value="{Binding Top}" />
-            <Setter Property="Left" Value="{Binding Left}" />
-            <Setter Property="Width" Value="{Binding Width}" />
-            <Setter Property="Height" Value="{Binding Height}" />
+        <Style BasedOn="{StaticResource ModernWindowStyle}"
+               TargetType="modern_controls:ModernWindow">
+            <Setter Property="WindowState"
+                    Value="{Binding State}" />
+            <Setter Property="Top"
+                    Value="{Binding Top}" />
+            <Setter Property="Left"
+                    Value="{Binding Left}" />
+            <Setter Property="Width"
+                    Value="{Binding Width}" />
+            <Setter Property="Height"
+                    Value="{Binding Height}" />
         </Style>
     </modern_controls:ModernWindow.Style>
 
@@ -55,7 +61,8 @@
 
             <StackPanel.Resources>
                 <TextDecorationCollection x:Key="MenuUnderline">
-                    <TextDecoration Location="Underline" PenOffset="2">
+                    <TextDecoration Location="Underline"
+                                    PenOffset="2">
                         <TextDecoration.Pen>
                             <Pen Brush="{DynamicResource ColorMain}"
                                  EndLineCap="Square"
@@ -65,7 +72,8 @@
                     </TextDecoration>
                 </TextDecorationCollection>
                 <TextDecorationCollection x:Key="DisableMenuUnderline">
-                    <TextDecoration Location="Underline" PenOffset="2">
+                    <TextDecoration Location="Underline"
+                                    PenOffset="2">
                         <TextDecoration.Pen>
                             <Pen Brush="{StaticResource ColorHeavyGray}"
                                  EndLineCap="Square"
@@ -75,22 +83,32 @@
                     </TextDecoration>
                 </TextDecorationCollection>
                 <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="FontSize" Value="16" />
-                    <Setter Property="Opacity" Value="0.6" />
-                    <Setter Property="Margin" Value="5,0" />
+                    <Setter Property="FontSize"
+                            Value="16" />
+                    <Setter Property="Opacity"
+                            Value="0.6" />
+                    <Setter Property="Margin"
+                            Value="5,0" />
                     <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Opacity" Value="1" />
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Opacity"
+                                    Value="1" />
                         </Trigger>
                     </Style.Triggers>
                 </Style>
                 <Style TargetType="{x:Type Hyperlink}">
-                    <Setter Property="TextDecorations" Value="{x:Null}" />
-                    <Setter Property="Foreground" Value="{DynamicResource ColorMain}" />
-                    <Setter Property="Cursor" Value="Arrow" />
+                    <Setter Property="TextDecorations"
+                            Value="{x:Null}" />
+                    <Setter Property="Foreground"
+                            Value="{DynamicResource ColorMain}" />
+                    <Setter Property="Cursor"
+                            Value="Arrow" />
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding IsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}}" Value="False">
-                            <Setter Property="Foreground" Value="{StaticResource ColorHeavyGray}" />
+                        <DataTrigger Binding="{Binding IsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}}"
+                                     Value="False">
+                            <Setter Property="Foreground"
+                                    Value="{StaticResource ColorHeavyGray}" />
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
@@ -101,16 +119,21 @@
                     <Run>サンプル</Run>
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
-                            <actions:CommandTriggerAction Command="{Binding ChangePageCommand}" Parameter="Main" />
+                            <actions:CommandTriggerAction Command="{Binding ChangePageCommand}"
+                                                          Parameter="Main" />
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </Hyperlink>
                 <TextBlock.Style>
-                    <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock">
+                    <Style BasedOn="{StaticResource {x:Type TextBlock}}"
+                           TargetType="TextBlock">
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding CurrentMenu}" Value="Main">
-                                <Setter Property="Opacity" Value="1" />
-                                <Setter Property="TextDecorations" Value="{StaticResource MenuUnderline}" />
+                            <DataTrigger Binding="{Binding CurrentMenu}"
+                                         Value="Main">
+                                <Setter Property="Opacity"
+                                        Value="1" />
+                                <Setter Property="TextDecorations"
+                                        Value="{StaticResource MenuUnderline}" />
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
@@ -122,16 +145,21 @@
                     <Run>設定</Run>
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
-                            <actions:CommandTriggerAction Command="{Binding ChangePageCommand}" Parameter="Setting" />
+                            <actions:CommandTriggerAction Command="{Binding ChangePageCommand}"
+                                                          Parameter="Setting" />
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </Hyperlink>
                 <TextBlock.Style>
-                    <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock">
+                    <Style BasedOn="{StaticResource {x:Type TextBlock}}"
+                           TargetType="TextBlock">
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding CurrentMenu}" Value="Setting">
-                                <Setter Property="Opacity" Value="1" />
-                                <Setter Property="TextDecorations" Value="{StaticResource MenuUnderline}" />
+                            <DataTrigger Binding="{Binding CurrentMenu}"
+                                         Value="Setting">
+                                <Setter Property="Opacity"
+                                        Value="1" />
+                                <Setter Property="TextDecorations"
+                                        Value="{StaticResource MenuUnderline}" />
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
@@ -143,16 +171,21 @@
                     <Run>情報</Run>
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
-                            <actions:CommandTriggerAction Command="{Binding ChangePageCommand}" Parameter="Information" />
+                            <actions:CommandTriggerAction Command="{Binding ChangePageCommand}"
+                                                          Parameter="Information" />
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </Hyperlink>
                 <TextBlock.Style>
-                    <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock">
+                    <Style BasedOn="{StaticResource {x:Type TextBlock}}"
+                           TargetType="TextBlock">
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding CurrentMenu}" Value="Information">
-                                <Setter Property="Opacity" Value="1" />
-                                <Setter Property="TextDecorations" Value="{StaticResource MenuUnderline}" />
+                            <DataTrigger Binding="{Binding CurrentMenu}"
+                                         Value="Information">
+                                <Setter Property="Opacity"
+                                        Value="1" />
+                                <Setter Property="TextDecorations"
+                                        Value="{StaticResource MenuUnderline}" />
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
@@ -160,7 +193,8 @@
             </TextBlock>
         </StackPanel>
 
-        <Border Grid.Row="1" Padding="15">
+        <Border Grid.Row="1"
+                Padding="15">
 
             <modern_controls:SlideTransition Next="{Binding Next}"
                                              Previous="{Binding Previous}"
@@ -172,5 +206,4 @@
             </modern_controls:SlideTransition>
         </Border>
     </Grid>
-
 </modern_controls:ModernWindow>

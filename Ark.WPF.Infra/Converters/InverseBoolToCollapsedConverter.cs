@@ -18,6 +18,5 @@ namespace Ark.WPF.Infra.Converters
         {
             return value ? Visibility.Collapsed : Visibility.Visible;
         }
-
     }
 }

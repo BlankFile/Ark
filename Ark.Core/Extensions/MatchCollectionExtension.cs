@@ -27,6 +27,5 @@ namespace System.Text.RegularExpressions
         {
             return collection.OfType<Match>().Select(x => x.Value).ToList();
         }
-
     }
 }

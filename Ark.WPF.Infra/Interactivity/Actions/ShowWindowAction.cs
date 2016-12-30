@@ -1,7 +1,5 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Interactivity;
-using Ark.WPF.Infra.Mvvm;
 
 namespace Ark.WPF.Infra.Interactivity.Actions
 {
@@ -33,7 +31,7 @@ namespace Ark.WPF.Infra.Interactivity.Actions
             public bool Result { get; internal set; }
         }
 
-        #endregion
+        #endregion [InnerClass]
 
         /// <summary>
         /// アクションを実行します。
