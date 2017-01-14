@@ -31,7 +31,7 @@ namespace Sample.ViewModels
             Information = 3
         }
 
-        #endregion [enum]
+        #endregion
 
         #region [Constructor]
 
@@ -52,7 +52,7 @@ namespace Sample.ViewModels
             ChangePageCommand = new ActionCommand<MenuType>(ChangePage, CanChangePage);
         }
 
-        #endregion [Constructor]
+        #endregion
 
         #region [Property]
 
@@ -106,7 +106,7 @@ namespace Sample.ViewModels
         /// </summary>
         public byte SlideValue { get { return Get<byte>(); } set { Set(value); } }
 
-        #endregion [Property]
+        #endregion
 
         #region [Property] Command
 
@@ -130,7 +130,7 @@ namespace Sample.ViewModels
         /// </summary>
         public ICommand ChangePageCommand { get; }
 
-        #endregion [Property] Command
+        #endregion
 
         #region [Method] Command
 
@@ -166,6 +166,6 @@ namespace Sample.ViewModels
             CurrentMenu = menuType;
         }
 
-        #endregion [Method] Command
+        #endregion
     }
 }

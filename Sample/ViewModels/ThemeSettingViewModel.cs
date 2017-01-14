@@ -23,7 +23,7 @@ namespace Sample.ViewModels
             ChangeColorCommand = new ActionCommand<string>(ChangeColor);
         }
 
-        #endregion [Constructor]
+        #endregion
 
         #region [Property]
 
@@ -32,7 +32,7 @@ namespace Sample.ViewModels
         public string InverseMainTheme { get { return Get<string>(); } set { Set(value); } }
         public string MainColor { get { return Get<string>(); } set { Set(value); } }
 
-        #endregion [Property]
+        #endregion
 
         #region [Property] Command
 
@@ -40,7 +40,7 @@ namespace Sample.ViewModels
         public ICommand ChangeThemeCommand { get; }
         public ICommand ChangeColorCommand { get; }
 
-        #endregion [Property] Command
+        #endregion
 
         #region [Method]
 
@@ -72,7 +72,7 @@ namespace Sample.ViewModels
             Settings.Default.Save();
         }
 
-        #endregion [Method]
+        #endregion
 
         #region [Method] private
 
@@ -107,6 +107,6 @@ namespace Sample.ViewModels
             };
         }
 
-        #endregion [Method] private
+        #endregion
     }
 }

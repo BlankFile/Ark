@@ -101,7 +101,7 @@ namespace Ark.WPF.Modern.Controls
         /// </summary>
         public int MainButtonWidth { get { return (int)GetValue(MainButtonWidthProperty); } set { SetValue(MainButtonWidthProperty, value); } }
 
-        #endregion [Property] Dependency
+        #endregion
 
         #region [Propert] Command
 
@@ -111,7 +111,7 @@ namespace Ark.WPF.Modern.Controls
         /// <summary> ドロップダウン表示時の処理 </summary>
         public ICommand OpenedCommand { get; }
 
-        #endregion [Propert] Command
+        #endregion
 
         #region [Method] private
 
@@ -126,6 +126,6 @@ namespace Ark.WPF.Modern.Controls
             IsOpen = false;
         }
 
-        #endregion [Method] private
+        #endregion
     }
 }

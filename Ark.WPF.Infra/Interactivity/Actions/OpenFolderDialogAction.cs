@@ -27,7 +27,7 @@ namespace Ark.WPF.Infra.Interactivity.Actions
             public string SelectedPath { get; internal set; }
         }
 
-        #endregion [InnerClass]
+        #endregion
 
         /// <summary>
         /// アクションを実行します。

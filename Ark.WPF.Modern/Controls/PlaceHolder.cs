@@ -53,7 +53,7 @@ namespace Ark.WPF.Modern.Controls
         /// <param name="value">Color 添付プロパティに設定する値</param>
         public static void SetColor(DependencyObject obj, Brush value) => obj.SetValue(ColorProperty, value);
 
-        #endregion [Property] Dependency
+        #endregion
 
         private static readonly Dictionary<int, WeakEventListener<TextChangedEventHandler, TextChangedEventArgs>> ListenerList =
             new Dictionary<int, WeakEventListener<TextChangedEventHandler, TextChangedEventArgs>>();

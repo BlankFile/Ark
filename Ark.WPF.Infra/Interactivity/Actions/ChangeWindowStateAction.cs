@@ -24,7 +24,7 @@ namespace Ark.WPF.Infra.Interactivity.Actions
             State = state;
         }
 
-        #endregion [Constructor]
+        #endregion
 
         #region [Property] Dependency
 
@@ -39,7 +39,7 @@ namespace Ark.WPF.Infra.Interactivity.Actions
         /// </summary>
         public WindowState State { get { return (WindowState)GetValue(StateProperty); } set { SetValue(StateProperty, value); } }
 
-        #endregion [Property] Dependency
+        #endregion
 
         /// <summary>
         /// アクションを実行します。

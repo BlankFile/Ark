@@ -20,6 +20,6 @@ namespace System.Collections.Generic
             return new ConcurrencyCollection<T>(collection);
         }
 
-        #endregion 変換
+        #endregion
     }
 }

@@ -41,7 +41,7 @@ namespace Ark.WPF.Modern.Controls
             Custom
         }
 
-        #endregion [enum]
+        #endregion
 
         #region [Constructor]
 
@@ -53,7 +53,7 @@ namespace Ark.WPF.Modern.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(PopupWindow), new FrameworkPropertyMetadata(typeof(PopupWindow)));
         }
 
-        #endregion [Constructor]
+        #endregion
 
         #region [Member] readonly
 
@@ -82,7 +82,7 @@ namespace Ark.WPF.Modern.Controls
         /// </summary>
         private static readonly object _lockObject = new object();
 
-        #endregion [Member] readonly
+        #endregion
 
         #region [Member]
 
@@ -106,7 +106,7 @@ namespace Ark.WPF.Modern.Controls
         /// </summary>
         private Storyboard _closeAnimation;
 
-        #endregion [Member]
+        #endregion
 
         #region [Property] public static
 
@@ -120,7 +120,7 @@ namespace Ark.WPF.Modern.Controls
         /// </summary>
         public static Storyboard CustomCloseAnimation { get; set; }
 
-        #endregion [Property] public static
+        #endregion
 
         #region [Method] override
 
@@ -152,7 +152,7 @@ namespace Ark.WPF.Modern.Controls
             await _openAnimation?.BeginAsync(this);
         }
 
-        #endregion [Method] override
+        #endregion
 
         #region [Method] public static
 
@@ -267,7 +267,7 @@ namespace Ark.WPF.Modern.Controls
             }
         }
 
-        #endregion [Method] public static
+        #endregion
 
         #region [Method] protected
 
@@ -315,7 +315,7 @@ namespace Ark.WPF.Modern.Controls
             }
         }
 
-        #endregion [Method] protected
+        #endregion
 
         #region [Method] private static
 
@@ -401,7 +401,7 @@ namespace Ark.WPF.Modern.Controls
             return adorner;
         }
 
-        #endregion [Method] private static
+        #endregion
 
         #region [Method] private
 
@@ -479,6 +479,6 @@ namespace Ark.WPF.Modern.Controls
             }
         }
 
-        #endregion [Method] private
+        #endregion
     }
 }

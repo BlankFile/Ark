@@ -33,7 +33,7 @@ namespace Ark.WPF.Infra.Converters
             return default(T1);
         }
 
-        #endregion [Method] protected virtual
+        #endregion
 
         #region [InterfaceImpl] IValueConverter
 
@@ -47,6 +47,6 @@ namespace Ark.WPF.Infra.Converters
             return ConvertBack((T2)value);
         }
 
-        #endregion [InterfaceImpl] IValueConverter
+        #endregion
     }
 }

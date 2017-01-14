@@ -62,6 +62,6 @@ namespace Ark.WPF.Modern.Controls
             return angle * Math.PI / 180;
         }
 
-        #endregion 円を配置
+        #endregion
     }
 }

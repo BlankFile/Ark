@@ -22,7 +22,7 @@
             }
         }
 
-        #endregion 変更
+        #endregion
 
         #region 取得
 
@@ -44,6 +44,6 @@
             return value;
         }
 
-        #endregion 取得
+        #endregion
     }
 }

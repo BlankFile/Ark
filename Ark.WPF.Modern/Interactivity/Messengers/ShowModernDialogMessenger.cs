@@ -27,7 +27,7 @@ namespace Ark.WPF.Modern.Interactivity.Messengers
         /// </summary>
         public PopupWindow.EffectType Effect { get { return (PopupWindow.EffectType)GetValue(EffectProperty); } set { SetValue(EffectProperty, value); } }
 
-        #endregion [Property] Dependency
+        #endregion
 
         /// <summary>
         /// ダイアログを表示します。

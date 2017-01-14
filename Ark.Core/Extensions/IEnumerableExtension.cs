@@ -48,7 +48,7 @@ namespace System.Collections.Generic
             return enumerator.MoveNext() && !enumerator.MoveNext();
         }
 
-        #endregion 判断
+        #endregion
 
         #region 反復
 
@@ -281,7 +281,7 @@ namespace System.Collections.Generic
             }
         }
 
-        #endregion 反復
+        #endregion
 
         #region 索引
 
@@ -310,7 +310,7 @@ namespace System.Collections.Generic
             return null;
         }
 
-        #endregion 索引
+        #endregion
 
         #region 変換
 
@@ -349,7 +349,7 @@ namespace System.Collections.Generic
             return new HashSet<T>(collection);
         }
 
-        #endregion 変換
+        #endregion
 
         #region 非同期
 
@@ -396,6 +396,6 @@ namespace System.Collections.Generic
             });
         }
 
-        #endregion 非同期
+        #endregion
     }
 }

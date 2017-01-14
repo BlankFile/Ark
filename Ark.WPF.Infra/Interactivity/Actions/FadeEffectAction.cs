@@ -46,7 +46,7 @@ namespace Ark.WPF.Infra.Interactivity.Actions
         /// </summary>
         public TimeSpan Duration { get { return (TimeSpan)GetValue(DurationProperty); } set { SetValue(DurationProperty, value); } }
 
-        #endregion [Property] Dependency
+        #endregion
 
         /// <summary>
         /// アクションを実行します。

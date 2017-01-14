@@ -16,7 +16,7 @@ namespace Ark.WPF.Modern.Controls
 
         private SlideTransitionCore _core;
 
-        #endregion [Member]
+        #endregion
 
         #region [Property] Dependency
 
@@ -73,7 +73,7 @@ namespace Ark.WPF.Modern.Controls
         /// </summary>
         public byte Value { get { return (byte)GetValue(ValueProperty); } set { SetValue(ValueProperty, value); } }
 
-        #endregion [Property] Dependency
+        #endregion
 
         #region [Method] public override
 
@@ -87,7 +87,7 @@ namespace Ark.WPF.Modern.Controls
             base.OnApplyTemplate();
         }
 
-        #endregion [Method] public override
+        #endregion
 
         #region [Method] private static
 
@@ -123,7 +123,7 @@ namespace Ark.WPF.Modern.Controls
             }
         }
 
-        #endregion [Method] private static
+        #endregion
 
         #region [Method] private
 
@@ -162,6 +162,6 @@ namespace Ark.WPF.Modern.Controls
             });
         }
 
-        #endregion [Method] private
+        #endregion
     }
 }

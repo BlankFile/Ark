@@ -38,7 +38,7 @@ namespace Ark.WPF.Modern.Interactivity.Actions
             public bool? Result { get; internal set; }
         }
 
-        #endregion [InnerClass]
+        #endregion
 
         /// <summary>
         /// アクションを実行します。

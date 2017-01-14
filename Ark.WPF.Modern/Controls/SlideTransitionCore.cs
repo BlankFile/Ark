@@ -30,7 +30,7 @@ namespace Ark.WPF.Modern.Controls
             Previous = -1
         }
 
-        #endregion [enum]
+        #endregion
 
         #region [Member]
 
@@ -49,7 +49,7 @@ namespace Ark.WPF.Modern.Controls
         /// </summary>
         private int _index = -1;
 
-        #endregion [Member]
+        #endregion
 
         #region [Property] Dependency
 
@@ -130,7 +130,7 @@ namespace Ark.WPF.Modern.Controls
         /// </summary>
         public double Display2TranslateX { get { return (double)GetValue(Display2TranslateXProperty); } set { SetValue(Display2TranslateXProperty, value); } }
 
-        #endregion [Property] Dependency
+        #endregion
 
         #region [Method] override
 
@@ -144,7 +144,7 @@ namespace Ark.WPF.Modern.Controls
             base.OnApplyTemplate();
         }
 
-        #endregion [Method] override
+        #endregion
 
         #region [Method]
 
@@ -202,6 +202,6 @@ namespace Ark.WPF.Modern.Controls
             }
         }
 
-        #endregion [Method]
+        #endregion
     }
 }

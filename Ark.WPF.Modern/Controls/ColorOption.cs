@@ -17,7 +17,7 @@ namespace Ark.WPF.Modern.Controls
 
         private static Duration duration = TimeSpan.FromMilliseconds(500).ToDuration();
 
-        #endregion [Member]
+        #endregion
 
         #region [Property] Attached
 
@@ -101,7 +101,7 @@ namespace Ark.WPF.Modern.Controls
         /// <param name="value">Duration 添付プロパティに設定する値</param>
         public static void SetDuration(DependencyObject obj, Duration value) => obj.SetValue(DurationProperty, value);
 
-        #endregion [Property] Attached
+        #endregion
 
         #region [Method] private static
 
@@ -203,6 +203,6 @@ namespace Ark.WPF.Modern.Controls
             }
         }
 
-        #endregion [Method] private static
+        #endregion
     }
 }

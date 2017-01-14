@@ -38,7 +38,7 @@ namespace Ark.WPF.Modern.Interactivity.Actions
             public PopupWindow.EffectType Effect { get; set; }
         }
 
-        #endregion [InnerClass]
+        #endregion
 
         /// <summary>
         /// アクションを実行します。

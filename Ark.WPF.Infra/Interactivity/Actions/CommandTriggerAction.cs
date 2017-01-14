@@ -33,7 +33,7 @@ namespace Ark.WPF.Infra.Interactivity.Actions
         /// </summary>
         public object Parameter { get { return (object)GetValue(ParameterProperty); } set { SetValue(ParameterProperty, value); } }
 
-        #endregion [Property] Dependency
+        #endregion
 
         /// <summary>
         /// 指定したコマンドを実行します。

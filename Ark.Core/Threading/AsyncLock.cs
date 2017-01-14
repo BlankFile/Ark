@@ -86,7 +86,7 @@ namespace Ark.Core.Threading
                 Dispose(false);
             }
 
-            #endregion [InterfaceImpl] IDisposable
+            #endregion
         }
     }
 }

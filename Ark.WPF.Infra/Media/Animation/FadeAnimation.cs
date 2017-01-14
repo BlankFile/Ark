@@ -47,7 +47,7 @@ namespace Ark.WPF.Infra.Media.Animation
         /// <param name="fillBehavior"><see cref="Timeline"/> の動作</param>
         public FadeAnimation(double fromValue, double toValue, Duration duration, FillBehavior fillBehavior) : base(fromValue, toValue, duration, fillBehavior) { Initialize(); }
 
-        #endregion [Constructor]
+        #endregion
 
         /// <summary>
         /// Opacity プロパティをアニメーションの対象に設定します。

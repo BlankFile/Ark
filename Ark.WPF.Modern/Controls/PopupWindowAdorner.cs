@@ -68,6 +68,6 @@ namespace Ark.WPF.Modern.Controls
             return new Size(Window.ActualWidth, Window.ActualHeight);
         }
 
-        #endregion [Method] override
+        #endregion
     }
 }

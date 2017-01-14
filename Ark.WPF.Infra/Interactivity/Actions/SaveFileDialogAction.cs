@@ -35,7 +35,7 @@ namespace Ark.WPF.Infra.Interactivity.Actions
             public string FileExtension { get; set; }
         }
 
-        #endregion [InnerClass]
+        #endregion
 
         /// <summary>
         /// アクションを実行します。

@@ -30,7 +30,7 @@ namespace Sample.ViewModels
             });
         }
 
-        #endregion [Constructor]
+        #endregion
 
         public ShowModernDialogMessenger DialogMessenger { get { return Get<ShowModernDialogMessenger>(); } set { Set(value); } }
         public ShowModernMessageMessenger MessageMessenger { get { return Get<ShowModernMessageMessenger>(); } set { Set(value); } }

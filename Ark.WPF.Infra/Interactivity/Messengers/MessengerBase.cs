@@ -22,7 +22,7 @@ namespace Ark.WPF.Infra.Interactivity.Messengers
         /// </summary>
         public DependencyObject Target { get { return (DependencyObject)GetValue(TargetProperty); } set { SetValue(TargetProperty, value); } }
 
-        #endregion [Property] Dependency
+        #endregion
 
         #region [Method] protected
 
@@ -32,7 +32,7 @@ namespace Ark.WPF.Infra.Interactivity.Messengers
         /// <param name="control">新しい通知対象</param>
         protected virtual void TargetChanged(object control) { }
 
-        #endregion [Method] protected
+        #endregion
 
         #region [Method] private static
 
@@ -48,7 +48,7 @@ namespace Ark.WPF.Infra.Interactivity.Messengers
             messenger?.TargetChanged(e.NewValue);
         }
 
-        #endregion [Method] private static
+        #endregion
     }
 
     /// <summary>
@@ -67,7 +67,7 @@ namespace Ark.WPF.Infra.Interactivity.Messengers
         /// </summary>
         private MessengerTrigger<TControl> _trigger;
 
-        #endregion [Member]
+        #endregion
 
         #region [Constructor]
 
@@ -85,7 +85,7 @@ namespace Ark.WPF.Infra.Interactivity.Messengers
             Subscribe(target);
         }
 
-        #endregion [Constructor]
+        #endregion
 
         #region [Method] public
 
@@ -97,7 +97,7 @@ namespace Ark.WPF.Infra.Interactivity.Messengers
             _trigger?.Detach();
         }
 
-        #endregion [Method] public
+        #endregion
 
         #region [Method] protected
 
@@ -124,7 +124,7 @@ namespace Ark.WPF.Infra.Interactivity.Messengers
             _trigger?.Invoke(parameter);
         }
 
-        #endregion [Method] protected
+        #endregion
 
         #region [Method] protected override
 
@@ -143,6 +143,6 @@ namespace Ark.WPF.Infra.Interactivity.Messengers
             }
         }
 
-        #endregion [Method] protected override
+        #endregion
     }
 }

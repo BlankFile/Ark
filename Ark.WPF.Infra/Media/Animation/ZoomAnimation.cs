@@ -14,7 +14,7 @@ namespace Ark.WPF.Infra.Media.Animation
 
         private string _transformPath;
 
-        #endregion [Member]
+        #endregion
 
         #region [Constructor]
 
@@ -55,7 +55,7 @@ namespace Ark.WPF.Infra.Media.Animation
         /// <param name="fillBehavior"><see cref="Timeline"/> の動作</param>
         public ZoomAnimation(double fromValue, double toValue, Duration duration, FillBehavior fillBehavior) : base(fromValue, toValue, duration, fillBehavior) { }
 
-        #endregion [Constructor]
+        #endregion
 
         #region [Method] public
 
@@ -96,6 +96,6 @@ namespace Ark.WPF.Infra.Media.Animation
             return storyboard;
         }
 
-        #endregion [Method] public
+        #endregion
     }
 }

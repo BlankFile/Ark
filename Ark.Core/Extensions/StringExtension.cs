@@ -38,7 +38,7 @@ namespace System
             return string.IsNullOrWhiteSpace(value);
         }
 
-        #endregion 判断
+        #endregion
 
         #region 置換
 
@@ -53,7 +53,7 @@ namespace System
             return string.Format(value, args);
         }
 
-        #endregion 置換
+        #endregion
 
         #region 整形
 
@@ -117,6 +117,6 @@ namespace System
             return string.Concat(chars);
         }
 
-        #endregion 整形
+        #endregion
     }
 }

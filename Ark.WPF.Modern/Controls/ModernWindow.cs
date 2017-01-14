@@ -59,6 +59,6 @@ namespace Ark.WPF.Modern.Controls
         /// </summary>
         public Func<Task<bool>> WindowClosingAction { get { return (Func<Task<bool>>)GetValue(WindowClosingActionProperty); } set { SetValue(WindowClosingActionProperty, value); } }
 
-        #endregion [Property] Dependency
+        #endregion
     }
 }

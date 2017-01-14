@@ -22,7 +22,7 @@ namespace Ark.WPF.Infra.Mvvm
         private Dictionary<string, Action> _afterActionDic = new Dictionary<string, Action>();
         private Dictionary<string, List<string>> _errorDic = new Dictionary<string, List<string>>();
 
-        #endregion [Member]
+        #endregion
 
         #region [Method] 変更通知
 
@@ -208,7 +208,7 @@ namespace Ark.WPF.Infra.Mvvm
             }
         }
 
-        #endregion [Method] 変更通知
+        #endregion
 
         #region [Method] エラー補助
 
@@ -293,7 +293,7 @@ namespace Ark.WPF.Infra.Mvvm
             clears.ForEach(x => RemoveError(x));
         }
 
-        #endregion [Method] エラー補助
+        #endregion
 
         #region [InterfaceImpl] INotifyDataErrorInfo
 
@@ -327,6 +327,6 @@ namespace Ark.WPF.Infra.Mvvm
         /// </summary>
         public bool HasErrors => _errorDic.Any();
 
-        #endregion [InterfaceImpl] INotifyDataErrorInfo
+        #endregion
     }
 }
