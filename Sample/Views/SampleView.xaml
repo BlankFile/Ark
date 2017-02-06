@@ -13,12 +13,14 @@
     <UserControl.Resources>
         <view_models:SampleViewModel x:Key="vm">
             <view_models:SampleViewModel.DialogMessenger>
-                <modern_messengers:ShowModernDialogMessenger Effect="Zoom"
-                                                             Target="{x:Reference Name=SamplePage}" />
+                <modern_messengers:ShowModernDialogMessenger Effect="Zoom" Target="{x:Reference Name=SamplePage}" />
             </view_models:SampleViewModel.DialogMessenger>
             <view_models:SampleViewModel.MessageMessenger>
                 <modern_messengers:ShowModernMessageMessenger Target="{x:Reference Name=SamplePage}" />
             </view_models:SampleViewModel.MessageMessenger>
+            <view_models:SampleViewModel.BusyMessenger>
+                <modern_messengers:ShowBusyDialogMessenger Target="{x:Reference Name=SamplePage}" />
+            </view_models:SampleViewModel.BusyMessenger>
         </view_models:SampleViewModel>
     </UserControl.Resources>
 
@@ -28,8 +30,7 @@
 
     <StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Label FontSize="22"
-                   ToolTip="ちみもうりょう">
+            <Label FontSize="22" ToolTip="ちみもうりょう">
                 魑魅魍魎
             </Label>
             <TextBlock VerticalAlignment="Center"
@@ -55,15 +56,13 @@
             <RadioButton GroupName="sample_radio">☂</RadioButton>
         </StackPanel>
 
-        <StackPanel Margin="5,10"
-                    HorizontalAlignment="Left">
+        <StackPanel Margin="5,10" HorizontalAlignment="Left">
             <CheckBox>＼(^o^)／</CheckBox>
             <CheckBox>＼(^o^)／＼(^o^)／＼(^o^)／</CheckBox>
             <CheckBox>＼(^o^)／＼(^o^)／＼(^o^)／＼(^o^)／＼(^o^)／＼(^o^)／</CheckBox>
         </StackPanel>
 
-        <TextBlock Margin="5,10"
-                   Foreground="{DynamicResource ColorInverseTheme}">
+        <TextBlock Margin="5,10" Foreground="{DynamicResource ColorInverseTheme}">
             コンテキストメニュー
             <TextBlock.ContextMenu>
                 <ContextMenu>
@@ -89,5 +88,7 @@
                 メッセージ
             </Button>
         </StackPanel>
+
     </StackPanel>
+
 </UserControl>

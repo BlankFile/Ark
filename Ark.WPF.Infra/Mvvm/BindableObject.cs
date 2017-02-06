@@ -107,10 +107,9 @@ namespace Ark.WPF.Infra.Mvvm
         /// <summary>
         /// プロパティの変更を、指定したプロパティに通知します。
         /// </summary>
-        /// <typeparam name="T">プロパティの型</typeparam>
         /// <param name="propName">プロパティ名</param>
         /// <param name="chainPropNames">通知するプロパティ名</param>
-        public void Chain<T>(string propName, params string[] chainPropNames)
+        public void Chain(string propName, params string[] chainPropNames)
         {
             if (!_chainPropertyDic.ContainsKey(propName))
             {

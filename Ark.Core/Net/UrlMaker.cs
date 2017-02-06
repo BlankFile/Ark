@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Net.Http;
-using System.Web;
+using System.Text;
 
 namespace Ark.Core.Net
 {
@@ -10,6 +11,8 @@ namespace Ark.Core.Net
     /// </summary>
     public static class UrlMaker
     {
+        private static Encoding _sjis = Encoding.GetEncoding("Shift-JIS");
+
         /// <summary>
         /// GET 通信でのパラメータを作成します。
         /// </summary>
@@ -17,7 +20,7 @@ namespace Ark.Core.Net
         /// <returns>パラメータを表す文字列</returns>
         public static string CreateGetParameter(IDictionary<string, object> parameters)
         {
-            var contents = HttpUtility.ParseQueryString(string.Empty);
+            var contents = new NameValueCollection();
 
             foreach (var parameter in parameters)
             {
@@ -33,7 +36,7 @@ namespace Ark.Core.Net
                     continue;
                 }
 
-                contents[parameter.Key] = HttpUtility.UrlEncode(value.ToString());
+                contents[parameter.Key] = Uri.EscapeDataString(value.ToString());
             }
 
             return contents.ToString();
@@ -64,7 +67,7 @@ namespace Ark.Core.Net
 
                 if (value is byte[])
                 {
-                    contents[parameter.Key] = HttpUtility.UrlEncode((byte[])value);
+                    contents[parameter.Key] = Uri.EscapeDataString(_sjis.GetString((byte[])value));
                 }
                 else
                 {

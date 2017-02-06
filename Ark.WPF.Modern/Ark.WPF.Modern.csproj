@@ -79,12 +79,15 @@
     <Compile Include="Controls\PopupWindowAdorner.cs" />
     <Compile Include="Controls\PasswordHelper.cs" />
     <Compile Include="Controls\PlaceHolder.cs" />
+    <Compile Include="Controls\PopupWindowOption.cs" />
     <Compile Include="Controls\SlideTransitionCore.cs" />
     <Compile Include="Controls\SlideTransition.cs" />
     <Compile Include="Extensions\ColorExtension.cs" />
     <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Interactivity\Actions\CloseModernDialogAction.cs" />
+    <Compile Include="Interactivity\Actions\ShowBusyDialogAction.cs" />
     <Compile Include="Interactivity\Messengers\CloseModernDialogMessenger.cs" />
+    <Compile Include="Interactivity\Messengers\ShowBusyDialogMessenger.cs" />
     <Compile Include="Interactivity\Messengers\ShowModernDialogMessenger.cs" />
     <Compile Include="Interactivity\Messengers\ShowModernMessageMessenger.cs" />
     <Compile Include="Interactivity\Notification\DialogButtonType.cs" />
