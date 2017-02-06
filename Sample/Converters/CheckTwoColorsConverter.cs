@@ -21,6 +21,7 @@ namespace Sample.Converters
             return (color1.Color == color2.Color);
         }
 
+
         public object[] ConvertBack(object value, Type[] targetType, object parameter, CultureInfo culture)
         {
             throw new Exception();
