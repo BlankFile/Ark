@@ -159,6 +159,7 @@
                                         <ei:FluidMoveBehavior.EaseX>
                                             <CircleEase EasingMode="EaseOut" />
                                         </ei:FluidMoveBehavior.EaseX>
+
                                     </ei:FluidMoveBehavior>
                                 </i:Interaction.Behaviors>-->
                             </DataGridCellsPresenter>
@@ -200,6 +201,7 @@
         <Style.Triggers>
             <Trigger Property="IsSelected"
                      Value="True">
+
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -270,4 +272,5 @@
         <Setter Property="RowDetailsVisibilityMode"
                 Value="Collapsed" />
     </Style>
+
 </ResourceDictionary>

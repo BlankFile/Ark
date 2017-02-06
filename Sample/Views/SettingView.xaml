@@ -112,6 +112,7 @@
             </Style>
             <Style BasedOn="{StaticResource ContentStyle}"
                    TargetType="{x:Type views:ThemeSettingView}" />
+
         </Grid.Resources>
 
         <TabControl Margin="0"

@@ -19,6 +19,7 @@
                     <TextBlock Padding="20"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
+                               FontFamily="{DynamicResource GenShinGothic}"
                                FontSize="16"
                                Foreground="{DynamicResource ColorInverseTheme}">
                         <LineBreak />
@@ -29,10 +30,10 @@
                         <LineBreak />
                         ￣￣||￣　　　　　ｵﾜﾀ┗(^o^ )┓三
                         <LineBreak />
-                        <Run Text="     " />
+                        <Run Text="        " />
                         ||　　　　　　　　　┏┗ 　三
                         <LineBreak />
-                        ￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣
+                        ￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣
                     </TextBlock>
                 </Grid>
             </StackPanel>
