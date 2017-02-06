@@ -151,25 +151,19 @@ namespace Ark.WPF.Modern.Controls
         /// <summary>
         /// 画面遷移します。
         /// </summary>
-        /// <param name="index">インデックス</param>
+        /// <param name="direction">スライドする方向</param>
+        /// <param name="value">遷移する量</param>
         /// <param name="animation">アニメーション</param>
         /// <returns>非同期オブジェクト</returns>
-        internal async Task Translate(int index, DoubleAnimation animation)
+        internal async Task Translate(Direction direction, byte value, DoubleAnimation animation)
         {
-            var containsRange = (0 <= index)
-                             && (index < Items.Count)
-                             && (index != _index);
+            var index = (int)direction * value;
 
-            if (!containsRange)
-            {
-                return;
-            }
-
-            var nextDisplay = Items?.OfType<FrameworkElement>().ElementAtOrDefault(index);
+            var nextDisplay = Items?.OfType<FrameworkElement>().ElementAtOrDefault(_index + index);
 
             if (nextDisplay != null)
             {
-                TranslateX = (double.IsNaN(ContainerWidth) ? ActualWidth : ContainerWidth) * -(index - _index);
+                TranslateX = (double.IsNaN(ContainerWidth) ? ActualWidth : ContainerWidth) * -index;
 
                 if (_currentDisplay == Display1)
                 {
@@ -185,7 +179,7 @@ namespace Ark.WPF.Modern.Controls
                 }
 
                 _currentDisplay = nextDisplay;
-                _index = index;
+                _index = _index + index;
             }
 
             var display1 = (Display1 as FrameworkElement) ?? new FrameworkElement();

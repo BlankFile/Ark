@@ -9,10 +9,14 @@
 
     <UserControl.Style>
         <Style TargetType="UserControl">
-            <Setter Property="modern_controls:ColorOption.ThemeColor" Value="{Binding ThemeColor}" />
-            <Setter Property="modern_controls:ColorOption.MainColor" Value="{Binding MainColor}" />
-            <Setter Property="modern_controls:ColorOption.InverseThemeColor" Value="{Binding InverseThemeColor, Mode=OneWayToSource}" />
-            <Setter Property="modern_controls:ColorOption.Duration" Value="0:0:0.3" />
+            <Setter Property="modern_controls:ColorOption.ThemeColor"
+                    Value="{Binding ThemeColor}" />
+            <Setter Property="modern_controls:ColorOption.MainColor"
+                    Value="{Binding MainColor}" />
+            <Setter Property="modern_controls:ColorOption.InverseThemeColor"
+                    Value="{Binding InverseThemeColor, Mode=OneWayToSource}" />
+            <Setter Property="modern_controls:ColorOption.Duration"
+                    Value="0:0:0.3" />
         </Style>
     </UserControl.Style>
 
@@ -39,13 +43,17 @@
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <Grid.Resources>
-            <Style BasedOn="{StaticResource {x:Type Label}}" TargetType="{x:Type Label}">
-                <Setter Property="FontSize" Value="14" />
-                <Setter Property="HorizontalAlignment" Value="Left" />
+            <Style BasedOn="{StaticResource {x:Type Label}}"
+                   TargetType="{x:Type Label}">
+                <Setter Property="FontSize"
+                        Value="14" />
+                <Setter Property="HorizontalAlignment"
+                        Value="Left" />
             </Style>
         </Grid.Resources>
 
-        <Label Grid.ColumnSpan="4" Content="テーマ" />
+        <Label Grid.ColumnSpan="4"
+               Content="テーマ" />
 
         <WrapPanel Grid.Row="1"
                    Grid.Column="1"
@@ -54,28 +62,38 @@
                    HorizontalAlignment="Left">
             <WrapPanel.Resources>
                 <Style TargetType="{x:Type Border}">
-                    <Setter Property="Width" Value="50" />
-                    <Setter Property="Height" Value="50" />
-                    <Setter Property="Padding" Value="4" />
+                    <Setter Property="Width"
+                            Value="50" />
+                    <Setter Property="Height"
+                            Value="50" />
+                    <Setter Property="Padding"
+                            Value="4" />
                     <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Opacity" Value="0.8" />
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Opacity"
+                                    Value="0.8" />
                         </Trigger>
                         <DataTrigger Value="True">
                             <DataTrigger.Binding>
                                 <MultiBinding Converter="{StaticResource CheckTwoColorsConverter}">
-                                    <Binding Path="Child.Background" RelativeSource="{RelativeSource Mode=Self}" />
-                                    <Binding Converter="{StaticResource CodeToColorBrushConverter}" Path="MainTheme" />
+                                    <Binding Path="Child.Background"
+                                             RelativeSource="{RelativeSource Mode=Self}" />
+                                    <Binding Converter="{StaticResource CodeToColorBrushConverter}"
+                                             Path="MainTheme" />
                                 </MultiBinding>
                             </DataTrigger.Binding>
-                            <Setter Property="Opacity" Value="0.7" />
+                            <Setter Property="Opacity"
+                                    Value="0.7" />
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
                 <Style TargetType="{x:Type Button}">
-                    <Setter Property="Template" Value="{DynamicResource ThemeButton}" />
+                    <Setter Property="Template"
+                            Value="{DynamicResource ThemeButton}" />
                 </Style>
-                <ControlTemplate x:Key="ThemeButton" TargetType="{x:Type Button}">
+                <ControlTemplate x:Key="ThemeButton"
+                                 TargetType="{x:Type Button}">
                     <Border x:Name="border"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{StaticResource ColorGray}"
@@ -87,7 +105,8 @@
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="MouseLeftButtonDown">
-                                <actions:CommandTriggerAction Command="{Binding ChangeThemeCommand}" Parameter="{Binding Background, RelativeSource={RelativeSource AncestorType={x:Type Border}}, Converter={StaticResource ColorBrushToCodeConverter}}" />
+                                <actions:CommandTriggerAction Command="{Binding ChangeThemeCommand}"
+                                                              Parameter="{Binding Background, RelativeSource={RelativeSource AncestorType={x:Type Border}}, Converter={StaticResource ColorBrushToCodeConverter}}" />
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </Border>
@@ -116,9 +135,11 @@
                       ItemsSource="{Binding ColorList}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel MaxWidth="620" HorizontalAlignment="Left">
+                    <WrapPanel MaxWidth="620"
+                               HorizontalAlignment="Left">
                         <i:Interaction.Behaviors>
-                            <ei:FluidMoveBehavior AppliesTo="Children" Duration="0:0:0.3" />
+                            <ei:FluidMoveBehavior AppliesTo="Children"
+                                                  Duration="0:0:0.3" />
                         </i:Interaction.Behaviors>
                     </WrapPanel>
                 </ItemsPanelTemplate>
@@ -127,25 +148,34 @@
                 <DataTemplate>
                     <DataTemplate.Resources>
                         <Style TargetType="{x:Type Border}">
-                            <Setter Property="Width" Value="50" />
-                            <Setter Property="Height" Value="50" />
-                            <Setter Property="Padding" Value="4" />
-                            <Setter Property="BorderThickness" Value="0" />
-                            <Setter Property="Cursor" Value="Hand" />
+                            <Setter Property="Width"
+                                    Value="50" />
+                            <Setter Property="Height"
+                                    Value="50" />
+                            <Setter Property="Padding"
+                                    Value="4" />
+                            <Setter Property="BorderThickness"
+                                    Value="0" />
+                            <Setter Property="Cursor"
+                                    Value="Hand" />
                             <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="{StaticResource ColorGray}" />
+                                <Trigger Property="IsMouseOver"
+                                         Value="True">
+                                    <Setter Property="Background"
+                                            Value="{StaticResource ColorGray}" />
                                 </Trigger>
                                 <DataTrigger Value="True">
                                     <DataTrigger.Binding>
                                         <MultiBinding Converter="{StaticResource CheckTwoColorsConverter}">
-                                            <Binding Path="Child.Background" RelativeSource="{RelativeSource Mode=Self}" />
+                                            <Binding Path="Child.Background"
+                                                     RelativeSource="{RelativeSource Mode=Self}" />
                                             <Binding Converter="{StaticResource CodeToColorBrushConverter}"
                                                      Path="DataContext.MainColor"
                                                      RelativeSource="{RelativeSource AncestorType=ItemsControl}" />
                                         </MultiBinding>
                                     </DataTrigger.Binding>
-                                    <Setter Property="Padding" Value="0" />
+                                    <Setter Property="Padding"
+                                            Value="0" />
                                 </DataTrigger>
                             </Style.Triggers>
                         </Style>
@@ -164,7 +194,8 @@
                                                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                                                 <i:Interaction.Triggers>
                                                     <i:EventTrigger EventName="MouseLeftButtonDown">
-                                                        <actions:CommandTriggerAction Command="{Binding DataContext.ChangeColorCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" Parameter="{Binding Background, RelativeSource={RelativeSource AncestorType={x:Type Border}}, Converter={StaticResource ColorBrushToCodeConverter}}" />
+                                                        <actions:CommandTriggerAction Command="{Binding DataContext.ChangeColorCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                                                                      Parameter="{Binding Background, RelativeSource={RelativeSource AncestorType={x:Type Border}}, Converter={StaticResource ColorBrushToCodeConverter}}" />
                                                     </i:EventTrigger>
                                                 </i:Interaction.Triggers>
                                             </Border>

@@ -5,5 +5,4 @@
 
     <system:Double x:Key="NormalOpacity">0.8</system:Double>
     <system:Double x:Key="FocusOpacity">1</system:Double>
-
 </ResourceDictionary>

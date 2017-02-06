@@ -118,7 +118,6 @@ namespace Ark.WPF.Modern.Controls
                     Foreground = GetColor(textBox),
                     HorizontalAlignment = HorizontalAlignment.Left,
                     VerticalAlignment = VerticalAlignment.Center,
-                    Opacity = 0.3
                 };
 
                 textBox.Background = new VisualBrush

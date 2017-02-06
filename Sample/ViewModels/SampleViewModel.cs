@@ -1,6 +1,7 @@
 ﻿using System.Windows.Input;
 using Ark.WPF.Infra.Mvvm;
 using Ark.WPF.Modern.Interactivity.Messengers;
+using Ark.WPF.Modern.Interactivity.Notification;
 using Sample.Common;
 
 namespace Sample.ViewModels
@@ -17,29 +18,22 @@ namespace Sample.ViewModels
             });
 
             MessageCommand = new ActionCommand(() =>
-           {
-               var result = MessageMessenger.Question("今日は晴れてますか？");
+            {
+                var result = MessageMessenger.Show("今日は晴れてますか？", MessageDialogImage.Question, DialogButtonType.YesNo);
 
-               if (result.HasValue)
-               {
-                   var message = result.Value ? "ハハッ！" : "そうですか。。";
+                if (result.HasValue)
+                {
+                    var message = result.Value ? "ハハッ！" : "そうですか。。";
 
-                   MessageMessenger.Info(message);
-               }
-
-               //BusyMessenger.IsBusy = true;
-
-               //await Task.Delay(3000);
-
-               //BusyMessenger.IsBusy = false;
-           });
+                    MessageMessenger.Show(message);
+                }
+            });
         }
 
         #endregion
 
         public ShowModernDialogMessenger DialogMessenger { get { return Get<ShowModernDialogMessenger>(); } set { Set(value); } }
         public ShowModernMessageMessenger MessageMessenger { get { return Get<ShowModernMessageMessenger>(); } set { Set(value); } }
-        public ShowBusyDialogMessenger BusyMessenger { get { return Get<ShowBusyDialogMessenger>(); } set { Set(value); } }
 
         public ICommand DialogCommand { get; }
         public ICommand MessageCommand { get; }

@@ -21,7 +21,7 @@
                         <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=WindowState}"
                                      Value="Maximized">
                             <Setter Property="BorderThickness"
-                                    Value="8" />
+                                    Value="6" />
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
@@ -48,7 +48,7 @@
                                Visibility="{Binding IsVisibleTitle, RelativeSource={RelativeSource AncestorType=controls:ModernWindow}, Converter={StaticResource BoolToCollapsedConverter}}" />
                     <StackPanel Grid.Row="0"
                                 Grid.Column="1"
-                                Margin="4"
+                                Margin="0"
                                 HorizontalAlignment="Right"
                                 VerticalAlignment="Top"
                                 IsEnabled="{Binding IsEnabledControlBox, RelativeSource={RelativeSource AncestorType=controls:ModernWindow}}"
@@ -95,7 +95,6 @@
                                       Grid.ColumnSpan="2" />
                 </Grid>
             </AdornerDecorator>
-
         </Border>
     </ControlTemplate>
 
@@ -113,5 +112,4 @@
         <Setter Property="Template"
                 Value="{StaticResource ModernWindowTemplate}" />
     </Style>
-
 </ResourceDictionary>

@@ -91,13 +91,8 @@
     <Compile Include="Extensions\TimeSpanExtension.cs" />
     <Compile Include="Extensions\TimelineExtension.cs" />
     <Compile Include="Interactivity\Actions\FadeEffectAction.cs" />
-    <Compile Include="Interactivity\Messengers\CloseWindowMessenger.cs" />
     <Compile Include="Interactivity\Messengers\MessengerBase.cs" />
     <Compile Include="Interactivity\InteractionSupport.cs" />
-    <Compile Include="Interactivity\Messengers\OpenFileDialogMessenger.cs" />
-    <Compile Include="Interactivity\Messengers\OpenFolderDialogMessenger.cs" />
-    <Compile Include="Interactivity\Messengers\SaveFileDialogMessenger.cs" />
-    <Compile Include="Interactivity\Messengers\SetFocusMessenger.cs" />
     <Compile Include="Interactivity\Triggers\MessengerTrigger.cs" />
     <Compile Include="Media\Animation\ZoomAnimation.cs" />
     <Compile Include="Media\Animation\FadeAnimation.cs" />

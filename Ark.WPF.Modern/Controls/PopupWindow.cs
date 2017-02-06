@@ -60,22 +60,22 @@ namespace Ark.WPF.Modern.Controls
         /// <summary>
         /// 表示時のフェードアニメーション
         /// </summary>
-        private static readonly Storyboard _fadeOpenAnimation = new FadeAnimation(0, 1, TimeSpan.FromMilliseconds(180)).ToStoryboard();
+        private static readonly Storyboard _fadeOpenAnimation = new FadeAnimation(0, 1, TimeSpan.FromMilliseconds(300)).ToStoryboard();
 
         /// <summary>
         /// 非表示時のフェードアニメーション
         /// </summary>
-        private static readonly Storyboard _fadeCloseAnimation = new FadeAnimation(1, 0, TimeSpan.FromMilliseconds(140)).ToStoryboard();
+        private static readonly Storyboard _fadeCloseAnimation = new FadeAnimation(1, 0, TimeSpan.FromMilliseconds(200)).ToStoryboard();
 
         /// <summary>
         /// 表示時のズームアニメーション
         /// </summary>
-        private static readonly ZoomAnimation _zoomOpenAnimation = new ZoomAnimation(0, 1, TimeSpan.FromMilliseconds(180));
+        private static readonly ZoomAnimation _zoomOpenAnimation = new ZoomAnimation(0, 1, TimeSpan.FromMilliseconds(300));
 
         /// <summary>
         /// 表示時のズームアニメーション
         /// </summary>
-        private static readonly ZoomAnimation _zoomCloseAnimation = new ZoomAnimation(1, 0, TimeSpan.FromMilliseconds(140));
+        private static readonly ZoomAnimation _zoomCloseAnimation = new ZoomAnimation(1, 0, TimeSpan.FromMilliseconds(200));
 
         /// <summary>
         /// 排他オブジェクト
@@ -122,15 +122,6 @@ namespace Ark.WPF.Modern.Controls
 
         #endregion
 
-        #region [Property] public static
-
-        /// <summary>
-        /// オプションを取得または設定します。
-        /// </summary>
-        public PopupWindowOption Option { get; set; } = new PopupWindowOption();
-
-        #endregion
-
         #region [Method] override
 
         /// <summary>
@@ -171,8 +162,7 @@ namespace Ark.WPF.Modern.Controls
         /// <param name="owner">親コントロール</param>
         /// <param name="content">ポップアップするコントロール</param>
         /// <param name="type">エフェクトの種類</param>
-        /// <param name="option">オプション</param>
-        public static void Show(UIElement owner, FrameworkElement content, EffectType type = EffectType.Fade, PopupWindowOption option = null)
+        public static void Show(UIElement owner, FrameworkElement content, EffectType type = EffectType.Fade)
         {
             var target = GetAdornerTarget(owner);
             var adorner = default(PopupWindowAdorner);
@@ -184,11 +174,6 @@ namespace Ark.WPF.Modern.Controls
 
             if (adorner.Window != null)
             {
-                if (option != null)
-                {
-                    adorner.Window.Option = option;
-                }
-
                 adorner.Window._openAnimation = adorner.Window.GetOpenStoryboard(type);
                 adorner.Window._closeAnimation = adorner.Window.GetCloseStoryboard(type);
 
@@ -205,7 +190,14 @@ namespace Ark.WPF.Modern.Controls
         public static void ShowDialog(UIElement owner, FrameworkElement content, EffectType type = EffectType.Fade)
         {
             var target = GetAdornerTarget(owner);
-            var adorner = CreateAdorner(target);
+            var adorner = GetPopupWindowAdorner(target);
+
+            if (adorner != null)
+            {
+                return;
+            }
+
+            adorner = CreateAdorner(target);
 
             if (adorner.Window != null)
             {
@@ -421,7 +413,7 @@ namespace Ark.WPF.Modern.Controls
         {
             var handler = default(RoutedEventHandler);
 
-            handler = (sender, args) =>
+            handler = async (sender, args) =>
             {
                 content.Loaded -= handler;
 
@@ -429,7 +421,7 @@ namespace Ark.WPF.Modern.Controls
 
                 container.Focus();
 
-                _openAnimation?.BeginAsync(container);
+                await _openAnimation?.BeginAsync(container);
             };
 
             content.Loaded += handler;
@@ -454,10 +446,7 @@ namespace Ark.WPF.Modern.Controls
                 }
                 else if (1 < Items.Count)
                 {
-                    if (Option.UseCloseAnimation)
-                    {
-                        await _closeAnimation.BeginAsync(container);
-                    }
+                    await _closeAnimation.BeginAsync(container);
 
                     Items.Remove(content);
                 }
@@ -470,10 +459,7 @@ namespace Ark.WPF.Modern.Controls
         /// <returns></returns>
         private async Task CloseAdorner()
         {
-            if (Option.UseCloseAnimation)
-            {
-                await _closeAnimation?.BeginAsync(this);
-            }
+            await _closeAnimation?.BeginAsync(this);
 
             Items.Clear();
 
@@ -487,12 +473,9 @@ namespace Ark.WPF.Modern.Controls
         /// <param name="e">イベント引数</param>
         private async void MouseLeftButtonDownAction(object sender, MouseButtonEventArgs e)
         {
-            if (Option.CanClickClose)
+            if (e.Source is PopupWindow)
             {
-                if (e.Source is PopupWindow)
-                {
-                    await CloseAdorner();
-                }
+                await CloseAdorner();
             }
         }
 

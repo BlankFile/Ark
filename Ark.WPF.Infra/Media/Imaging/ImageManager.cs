@@ -33,26 +33,6 @@ namespace Ark.WPF.Infra.Media
         }
 
         /// <summary>
-        /// ビットマップを生成します。
-        /// </summary>
-        /// <param name="biinary">バイナリ</param>
-        /// <returns>ビットマップ</returns>
-        public static BitmapImage CreateBitmap(byte[] biinary)
-        {
-            var image = (BitmapImage)null;
-
-            using (var stream = new MemoryStream(biinary))
-            {
-                if (stream != null)
-                {
-                    image = CreateBitmapFromStream(stream);
-                }
-            }
-
-            return image;
-        }
-
-        /// <summary>
         /// ビットマップのストリームを生成します。
         /// </summary>
         /// <param name="uri">URI</param>

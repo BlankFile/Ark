@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Input;
 using Ark.WPF.Infra.Mvvm;
 using Sample.Properties;
@@ -18,16 +19,16 @@ namespace Sample.ViewModels
         public enum MenuType
         {
             /// <summary> なし </summary>
-            None = -1,
+            None = 0,
 
             /// <summary> メイン </summary>
-            Main,
+            Main = 1,
 
             /// <summary> 設定 </summary>
-            Setting,
+            Setting = 2,
 
             /// <summary> 情報 </summary>
-            Information
+            Information = 3
         }
 
         #endregion
@@ -44,7 +45,7 @@ namespace Sample.ViewModels
             Width = Settings.Default.WindowSizeWidth;
             Height = Settings.Default.WindowSizeHeight;
 
-            Index = (int)MenuType.None;
+            CurrentMenu = MenuType.None;
 
             LoadedCommand = new ActionCommand(Loaded);
             PreviewKeyDownCommand = new ActionCommand<KeyEventArgs>(PreviewKeyDown);
@@ -86,9 +87,24 @@ namespace Sample.ViewModels
         public bool IsLoading { get { return Get<bool>(); } set { Set(value); } }
 
         /// <summary>
-        /// 画面のインデックス
+        /// 表示中のページ
         /// </summary>
-        public int Index { get { return Get<int>(); } set { Set(value); } }
+        public MenuType CurrentMenu { get { return Get<MenuType>(); } set { Set(value); } }
+
+        /// <summary>
+        /// 画面遷移（進む）フラグ
+        /// </summary>
+        public bool Next { get { return Get<bool>(); } set { Set(value); } }
+
+        /// <summary>
+        /// 画面遷移（戻る）フラグ
+        /// </summary>
+        public bool Previous { get { return Get<bool>(); } set { Set(value); } }
+
+        /// <summary>
+        /// 画面を遷移する量
+        /// </summary>
+        public byte SlideValue { get { return Get<byte>(); } set { Set(value); } }
 
         #endregion
 
@@ -129,12 +145,25 @@ namespace Sample.ViewModels
 
         internal bool CanChangePage(MenuType menuType)
         {
-            return ((int)menuType != Index);
+            return (menuType != CurrentMenu);
         }
 
         internal void ChangePage(MenuType menuType)
         {
-            Index = (int)(menuType);
+            var value = CurrentMenu - menuType;
+
+            SlideValue = (byte)Math.Abs(value);
+
+            if (value.IsPlus())
+            {
+                Previous = true;
+            }
+            else
+            {
+                Next = true;
+            }
+
+            CurrentMenu = menuType;
         }
 
         #endregion

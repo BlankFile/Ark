@@ -73,5 +73,4 @@
                      Color="#FFAF00E2" />
     <SolidColorBrush x:Key="ColorViolet"
                      Color="#FF6719A8" />
-
 </ResourceDictionary>
