@@ -12,31 +12,9 @@
              xmlns:view_models="clr-namespace:Sample.ViewModels"
              x:Name="InformationControl">
 
-    <UserControl.Template>
-        <ControlTemplate TargetType="UserControl">
-            <StackPanel Orientation="Vertical">
-                <Grid Background="{DynamicResource ColorTheme}">
-                    <TextBlock Padding="20"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"
-                               FontFamily="{DynamicResource GenShinGothic}"
-                               FontSize="16"
-                               Foreground="{DynamicResource ColorInverseTheme}">
-                        <LineBreak />
-                        <LineBreak />
-                        ＿＿____
-                        <LineBreak />
-                        |←樹海 |
-                        <LineBreak />
-                        ￣￣||￣　　　　　ｵﾜﾀ┗(^o^ )┓三
-                        <LineBreak />
-                        <Run Text="        " />
-                        ||　　　　　　　　　┏┗ 　三
-                        <LineBreak />
-                        ￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣
-                    </TextBlock>
-                </Grid>
-            </StackPanel>
-        </ControlTemplate>
-    </UserControl.Template>
+    <Grid>
+        <Image Width="400"
+               Height="400"
+               Source="/Sample;component/Content/Images/Koala.jpg" />
+    </Grid>
 </UserControl>

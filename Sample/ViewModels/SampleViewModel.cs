@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Threading.Tasks;
+using System.Windows.Input;
 using Ark.WPF.Infra.Mvvm;
 using Ark.WPF.Modern.Interactivity.Messengers;
 using Sample.Common;
@@ -17,22 +18,25 @@ namespace Sample.ViewModels
             });
 
             MessageCommand = new ActionCommand(() =>
-           {
-               var result = MessageMessenger.Question("今日は晴れてますか？");
+            {
+                var result = MessageMessenger.Question("ゴリラの学名はゴリラゴリラである。");
 
-               if (result.HasValue)
-               {
-                   var message = result.Value ? "ハハッ！" : "そうですか。。";
+                if (result.HasValue)
+                {
+                    var message = result.Value ? "正解！！" : "ハズレ。。";
 
-                   MessageMessenger.Info(message);
-               }
+                    MessageMessenger.Info(message);
+                }
+            });
 
-               //BusyMessenger.IsBusy = true;
+            BusyCommand = new ActionCommand(async () =>
+            {
+                BusyMessenger.IsBusy = true;
 
-               //await Task.Delay(3000);
+                await Task.Delay(2000);
 
-               //BusyMessenger.IsBusy = false;
-           });
+                BusyMessenger.IsBusy = false;
+            });
         }
 
         #endregion
@@ -43,5 +47,6 @@ namespace Sample.ViewModels
 
         public ICommand DialogCommand { get; }
         public ICommand MessageCommand { get; }
+        public ICommand BusyCommand { get; }
     }
 }

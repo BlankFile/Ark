@@ -45,7 +45,7 @@
             <ComboBoxItem>りんご</ComboBoxItem>
             <ComboBoxItem>ぶどう</ComboBoxItem>
             <ComboBoxItem>みかん</ComboBoxItem>
-            <ComboBoxItem>メロン</ComboBoxItem>
+            <ComboBoxItem>いちご</ComboBoxItem>
         </ComboBox>
 
         <StackPanel Width="40"
@@ -57,17 +57,17 @@
         </StackPanel>
 
         <StackPanel Margin="5,10" HorizontalAlignment="Left">
-            <CheckBox>＼(^o^)／</CheckBox>
-            <CheckBox>＼(^o^)／＼(^o^)／＼(^o^)／</CheckBox>
-            <CheckBox>＼(^o^)／＼(^o^)／＼(^o^)／＼(^o^)／＼(^o^)／＼(^o^)／</CheckBox>
+            <CheckBox>ごはん</CheckBox>
+            <CheckBox>パン</CheckBox>
+            <CheckBox>ラーメン</CheckBox>
         </StackPanel>
 
         <TextBlock Margin="5,10" Foreground="{DynamicResource ColorInverseTheme}">
-            コンテキストメニュー
+            右クリックでコンテキストメニューを表示します。
             <TextBlock.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="ピアノ" />
-                    <MenuItem Header="チェンバロ" />
+                    <MenuItem Header="ヴァイオリン" />
                     <MenuItem Header="フルート" />
                 </ContextMenu>
             </TextBlock.ContextMenu>
@@ -86,6 +86,13 @@
                     HorizontalAlignment="Left"
                     Command="{Binding MessageCommand}">
                 メッセージ
+            </Button>
+
+            <Button Width="80"
+                    Margin="5,10"
+                    HorizontalAlignment="Left"
+                    Command="{Binding BusyCommand}">
+                待機
             </Button>
         </StackPanel>
 

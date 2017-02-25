@@ -108,7 +108,7 @@
                 <TextBlock.Style>
                     <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock">
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding CurrentMenu}" Value="Main">
+                            <DataTrigger Binding="{Binding Index}" Value="0">
                                 <Setter Property="Opacity" Value="1" />
                                 <Setter Property="TextDecorations" Value="{StaticResource MenuUnderline}" />
                             </DataTrigger>
@@ -129,7 +129,7 @@
                 <TextBlock.Style>
                     <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock">
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding CurrentMenu}" Value="Setting">
+                            <DataTrigger Binding="{Binding Index}" Value="1">
                                 <Setter Property="Opacity" Value="1" />
                                 <Setter Property="TextDecorations" Value="{StaticResource MenuUnderline}" />
                             </DataTrigger>
@@ -150,7 +150,7 @@
                 <TextBlock.Style>
                     <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock">
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding CurrentMenu}" Value="Information">
+                            <DataTrigger Binding="{Binding Index}" Value="2">
                                 <Setter Property="Opacity" Value="1" />
                                 <Setter Property="TextDecorations" Value="{StaticResource MenuUnderline}" />
                             </DataTrigger>

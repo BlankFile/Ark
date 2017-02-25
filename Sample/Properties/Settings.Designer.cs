@@ -49,30 +49,6 @@ namespace Sample.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("640")]
-        public double WindowSizeWidth {
-            get {
-                return ((double)(this["WindowSizeWidth"]));
-            }
-            set {
-                this["WindowSizeWidth"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("420")]
-        public double WindowSizeHeight {
-            get {
-                return ((double)(this["WindowSizeHeight"]));
-            }
-            set {
-                this["WindowSizeHeight"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#FF00198D")]
         public string MainColor {
             get {
@@ -104,6 +80,30 @@ namespace Sample.Properties {
             }
             set {
                 this["InverseThemeColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("640")]
+        public double WindowSizeWidth {
+            get {
+                return ((double)(this["WindowSizeWidth"]));
+            }
+            set {
+                this["WindowSizeWidth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("440")]
+        public double WindowSizeHeight {
+            get {
+                return ((double)(this["WindowSizeHeight"]));
+            }
+            set {
+                this["WindowSizeHeight"] = value;
             }
         }
     }
