@@ -37,11 +37,9 @@
         /// <returns>指定したキーに関連付けられている値、もしくは<paramref name="defaultValue"/></returns>
         public static T2 GetOrDefault<T1, T2>(this IDictionary<T1, T2> collection, T1 key, T2 defaultValue = default(T2))
         {
-            var value = defaultValue;
+            var value = default(T2);
 
-            collection.TryGetValue(key, out value);
-
-            return value;
+            return collection.TryGetValue(key, out value) ? value : defaultValue;
         }
 
         #endregion
